@@ -1,9 +1,8 @@
-﻿using System.Collections.Generic;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System;
-using Domain;
+using System.Collections.Generic;
 
-namespace Domain.WebUI.Utils
+namespace Domain.WebUI
 {
 	public static partial class extDomain
 	{

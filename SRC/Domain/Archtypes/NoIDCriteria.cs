@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using Zebra;
 
 namespace Domain
 {

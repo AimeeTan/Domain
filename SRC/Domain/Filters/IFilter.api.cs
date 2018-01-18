@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Zebra;
 using Zebra.Facets;
 
-namespace Zebra.InfoPath
+namespace Domain
 {
 	public interface IFilter : ICriteria, IAware<PagingSpec>, IAware<IEnumerable<SortSpec>>
 	{
@@ -22,7 +23,7 @@ namespace Zebra.InfoPath
 		K[] TalliedIDs { get; }
 	}
 
-	partial class extInfoPath
+	partial class extDomain
 	{
 		public static IQueryable<T> ApplyTo<T>(this IFilter<T> me, Func<IQueryable<T>> source)
 			=> me.ApplyTo(source());

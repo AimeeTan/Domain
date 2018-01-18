@@ -1,10 +1,11 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Reflection;
+using Zebra;
 
-namespace Zebra.InfoPath
+namespace Domain
 {
-	partial class extInfoPath
+	partial class extDomain
 	{
 		public static TEnum BeEnum<TEnum>(this string me) where TEnum : struct
 		{

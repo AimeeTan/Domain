@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Zebra;
 
 namespace Domain
 {
@@ -13,8 +14,8 @@ namespace Domain
 
 		protected override bool OnEarlyBreak()
 		{
-			self.Add(x => ((IIdentityGetter<PK>) x).ID.Equals(ID), ID.IsTruthy())
-				.Add(x => IDs.ToList().Contains(((IIdentityGetter<PK>) x).ID), IDs.IsTangible());
+			self.Add(x => ((IIdentityGetter<PK>)x).ID.Equals(ID), ID.IsTruthy())
+				.Add(x => IDs.ToList().Contains(((IIdentityGetter<PK>)x).ID), IDs.IsTangible());
 			return ID.IsTruthy() || IDs.IsTangible();
 		}
 
@@ -22,7 +23,7 @@ namespace Domain
 		{
 			try
 			{
-				if(PageIndex.IsFalsy() && PageSize.IsFalsy()) return source;
+				if (PageIndex.IsFalsy() && PageSize.IsFalsy()) return source;
 
 				AvailCnt = source.Count();
 				PageIndex = PageIndex < 1 ? 1 : PageIndex;

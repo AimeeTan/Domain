@@ -4,8 +4,10 @@ using System.Linq;
 
 namespace Domain
 {
-	using Tuplets;
-	using Archetypes;
+	using Domain.Archetypes;
+	using Zebra;
+	using Zebra.Tuplets;
+
 	namespace Archetypes
 	{
 		public interface ITvpInfo { string InfoOf(Enum key); }

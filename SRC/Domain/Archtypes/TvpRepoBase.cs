@@ -1,5 +1,7 @@
-﻿using System;
-using Domain.Facets;
+﻿using Domain.Facets;
+using System;
+using Zebra;
+using Zebra.Facets;
 
 namespace Domain.Archetypes
 {

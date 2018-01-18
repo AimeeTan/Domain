@@ -1,11 +1,12 @@
-﻿using System.Collections.Generic;
-using System.Linq.Expressions;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
-using System;
+using System.Linq.Expressions;
+using Zebra;
 
-namespace Zebra.InfoPath
+namespace Domain
 {
-	partial class extInfoPath
+	partial class extDomain
 	{
 		public static IQueryable<T> PageBy<T, C>(this IQueryable<T> me, C criteria) where C : IPagnation
 			=> me.Skip((criteria.PageIndex - 1) * criteria.PageSize).Take(criteria.PageSize);

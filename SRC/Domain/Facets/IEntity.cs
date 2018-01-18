@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using Zebra;
 
 namespace Domain
 {
@@ -12,7 +13,7 @@ namespace Domain
 	public interface IEntity : IEntity<long> { }
 	public interface IEntity<PK> : IIdentityGetter<PK>, IIdentitySetter<PK> where PK : IEquatable<PK> { }
 
-	partial class extInfoPath
+	partial class extDomain
 	{
 		public static T Fetch<T>(this IQueryable<T> me, Expression<Func<T, bool>> predicate)
 			=> me.Ensure(q => q.FirstOrDefault(predicate));

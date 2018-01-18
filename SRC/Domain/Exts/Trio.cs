@@ -2,7 +2,7 @@
 {
 	public sealed class Trio : at.Tvp.Base<Trio>
 	{
-		public  Trio() { }
+		public Trio() { }
 		private Trio(string value) : base(value) { }
 		public override Trio NewValue(string value) => new Trio(value);
 

@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.IO;
 
-namespace Zebra.IC.WebUI
+namespace Domain.WebUI
 {
 	public static class JsonReader<T>
 	{
