@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using AutoMapper;
+using System.Collections.Generic;
 using System.Linq;
-using AutoMapper;
 using Zebra;
 
 namespace Domain.Data
