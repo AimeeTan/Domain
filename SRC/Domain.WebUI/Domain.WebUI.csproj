@@ -11,14 +11,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="6.2.2" />
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.1.1" />
     <PackageReference Include="Microsoft.AspNetCore" Version="1.1.2" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.3" />
     <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="1.1.2" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.1.2" />
     <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="1.1.2" />
-    <PackageReference Include="Zebra" Version="2.0.0" />
-    <PackageReference Include="Zebra.Core" Version="2.0.0" />
+    <PackageReference Include="Zebra" Version="1.0.0.3" />
   </ItemGroup>
 
   <ItemGroup>
@@ -33,12 +33,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Domain.Data\Domain.Data.csproj" />
     <ProjectReference Include="..\Domain\Domain.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="AutoMapper">
-      <HintPath>E:\Work\Amazon_Zip\bin\Debug\AutoMapper.dll</HintPath>
-    </Reference>
   </ItemGroup>
 
 </Project>

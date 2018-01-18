@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using Zebra;
 
 namespace Domain.WebUI
 {
@@ -11,6 +12,12 @@ namespace Domain.WebUI
 		{
 			var data = result(criteria).ToListDuly();
 			return new PaginationObjectResult(criteria, data);
+		}
+	}
+	public class PaginationObjectResult : OkObjectResult
+	{
+		public PaginationObjectResult(IPagnation pagnation, object value) : base(new { Data = value, AvailableCnt = pagnation.AvailCnt })
+		{
 		}
 	}
 }
