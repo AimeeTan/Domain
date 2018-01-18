@@ -4,7 +4,7 @@ export const menus: IMenu[] = [
 	name: '系统配置',
 	className: 'fa fa-cube',
 	twoLevel: false,
-	url: 'system/configuration',
+	url: 'system/config',
 	},
 	{
 		typeName: '自动采集扫描',

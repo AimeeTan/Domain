@@ -11,6 +11,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="src\app\pages\pages.module.ts" />
+    <None Remove="src\app\pages\system-config.component.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoMapper" Version="6.2.2" />
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.1.1" />
     <PackageReference Include="Microsoft.AspNetCore" Version="1.1.2" />
@@ -27,11 +32,20 @@
 
   <ItemGroup>
     <Folder Include="Api\" />
-    <Folder Include="src\app\pages\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="src\app\pages\system-config.component.js" />
+    <None Include="src\app\pages\system-config.component.js.map" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Domain\Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="src\app\pages\pages.module.ts" />
+    <TypeScriptCompile Include="src\app\pages\system-config.component.ts" />
   </ItemGroup>
 
 </Project>

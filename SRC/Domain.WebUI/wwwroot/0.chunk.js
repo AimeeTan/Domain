@@ -9246,7 +9246,10 @@ var layout_component_1 = __webpack_require__(882);
 // noinspection TypeScriptValidateTypes
 var routes = [
     {
-        path: '', component: layout_component_1.Layout, children: []
+        path: '', component: layout_component_1.Layout, children: [
+            { path: '', redirectTo: 'system/config', pathMatch: 'full' },
+            { path: 'pages', loadChildren: function () { return __webpack_require__.e/* import() */(5).then(__webpack_require__.bind(null, 925)).then(function (module) { return module['PagesModule']; }); } }
+        ]
     }
 ];
 exports.ROUTES = router_1.RouterModule.forChild(routes);
@@ -9478,7 +9481,7 @@ exports.menus = [
         name: '系统配置',
         className: 'fa fa-cube',
         twoLevel: false,
-        url: 'system/configuration',
+        url: 'system/config',
     },
     {
         typeName: '自动采集扫描',
