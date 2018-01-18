@@ -1,0 +1,77 @@
+
+/**
+* if set to device-width ie10 built-in scrollbar overflows content. Fix it as of here
+* http://stackoverflow.com/questions/17045132/scrollbar-overlay-in-ie10-how-do-you-stop-that-might-be-bootstrap
+*/
+@-ms-viewport{
+  width: auto;
+}
+
+html, body{
+  height: 100%;
+}
+
+body{
+  font-weight: $font-weight-base;
+  overflow-x: hidden;
+}
+
+th{
+  font-weight: $font-weight-semi-bold;
+}
+
+a {
+  cursor: pointer;
+}
+
+svg {
+  width: 100%;
+}
+
+strong, b {
+  font-weight: bold;
+}
+
+abbr[title] {
+  text-decoration: none;
+}
+
+/**
+	Hack for ngx-bootstrap
+*/
+.fade.in {
+	opacity: 1;
+}
+
+.modal.in .modal-dialog {
+	-webkit-transform: translate(0, 0);
+	-o-transform: translate(0, 0);
+	transform: translate(0, 0);
+}
+
+.modal-backdrop .fade .in {
+	opacity: 0.5 !important;
+}
+
+
+.modal-backdrop.fade {
+	opacity: 0.5 !important;
+}
+
+.modal-xxl {
+	max-width: 92%;
+}
+
+.btn-xl {
+	height: 200px;
+}
+
+.btn-dashoutline {
+	border: dotted;
+}
+
+.draganddropbg {
+	background: url("../../assets/icon/DragAndDrop.png");
+	background-repeat: no-repeat;
+	background-position: center center;
+}

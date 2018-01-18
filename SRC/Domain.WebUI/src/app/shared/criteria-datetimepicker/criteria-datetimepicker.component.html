@@ -1,0 +1,9 @@
+﻿<input class="form-control picker-input"
+	   [(ngModel)]="moment"
+	   [returnObject]=" 'string' "
+	   [viewFormat]="'YYYY-MM-DD HH:mm'"
+	   [(dateTimePicker)]="moment"
+	   [mode]="'dropdown'"
+	   (dateTimePickerChange)="setMoment($event)"
+	   placeholder="Choose Date"
+	   readonly />

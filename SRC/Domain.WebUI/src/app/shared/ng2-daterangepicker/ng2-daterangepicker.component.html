@@ -1,0 +1,10 @@
+﻿<div class="input-group" daterangepicker (selected)="selectedDate($event)">
+	<span class="form-control uneditable-input" name="daterange">
+		{{ startDate | datex:'MM/DD/YYYY'}} {{startDate&&endDate?'-':''}} {{ endDate| datex:'MM/DD/YYYY' }}
+	</span>
+	<span class="input-group-btn">
+		<a role="button" class="btn btn-default" style="padding-left: 5px; padding-right: 5px;">
+			<i class="fa fa-calendar"></i>
+		</a>
+	</span>
+</div>

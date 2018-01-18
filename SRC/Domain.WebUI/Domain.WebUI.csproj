@@ -21,8 +21,19 @@
 
   <ItemGroup>
     <Folder Include="Api\" />
-    <Folder Include="src\app\" />
+    <Folder Include="src\app\model\" />
     <Folder Include="src\assets\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Domain.Data\Domain.Data.csproj" />
+    <ProjectReference Include="..\Domain\Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>E:\Work\Amazon_Zip\bin\Debug\AutoMapper.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
