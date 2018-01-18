@@ -22,7 +22,6 @@
   <ItemGroup>
     <Folder Include="Api\" />
     <Folder Include="src\app\model\" />
-    <Folder Include="src\assets\" />
   </ItemGroup>
 
   <ItemGroup>

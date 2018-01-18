@@ -40,8 +40,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Archtypes\Criteria.cs" />
+    <Compile Include="Archtypes\Criteria`1.cs" />
+    <Compile Include="Archtypes\Entity.cs" />
+    <Compile Include="Archtypes\EntityCriteria.cs" />
+    <Compile Include="Archtypes\NoIDCriteria.cs" />
+    <Compile Include="Archtypes\TvpInfo.cs" />
+    <Compile Include="Archtypes\TvpRepoBase.cs" />
+    <Compile Include="_module.cs" />
     <Compile Include="Environment.cs" />
+    <Compile Include="Exts\Bag.cs" />
+    <Compile Include="Exts\Duo.cs" />
+    <Compile Include="Exts\Enum.ext.cs" />
+    <Compile Include="Exts\Linq.ext.cs" />
+    <Compile Include="Exts\Mucho.cs" />
+    <Compile Include="Exts\MySpr.cs" />
+    <Compile Include="Exts\Trio.cs" />
+    <Compile Include="Exts\Tvp.ext.cs" />
+    <Compile Include="Facets\ICriteria.cs" />
+    <Compile Include="Facets\ICriteriaPool.cs" />
+    <Compile Include="Facets\IEntity.cs" />
+    <Compile Include="Facets\IEntityCriteria.cs" />
+    <Compile Include="Facets\IPagnation.cs" />
+    <Compile Include="Facets\IReferring.cs" />
+    <Compile Include="Facets\ISlip.cs" />
+    <Compile Include="Filters\IFilter.api.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -50,9 +73,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Archtypes\" />
-    <Folder Include="Exts\" />
-    <Folder Include="Facets\" />
+    <Folder Include="Common\" />
+    <Folder Include="Enums\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
