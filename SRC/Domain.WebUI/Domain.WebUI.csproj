@@ -27,6 +27,7 @@
 
   <ItemGroup>
     <Folder Include="Api\" />
+    <Folder Include="src\app\pages\" />
   </ItemGroup>
 
   <ItemGroup>
