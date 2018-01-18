@@ -22,7 +22,7 @@ exports.menus = [
             }]
     },
     {
-        typeName: '自定义扫描',
+        typeName: '自定义采集扫描',
         className: 'fa fa-exclamation-circle',
         twoLevel: true,
         node: [{
