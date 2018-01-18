@@ -4,9 +4,9 @@ var core_1 = require("@angular/core");
 var AppConfig = (function () {
     function AppConfig() {
         this.config = {
-            name: 'IC',
-            title: 'IC By 360Zebra',
-            version: '1.0.17.0601',
+            name: 'Domain',
+            title: 'Domain By Aimee',
+            version: '1.0.18.0118',
             /**
              * Whether to print and alert some log information
              */

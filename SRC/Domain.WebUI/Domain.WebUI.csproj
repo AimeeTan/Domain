@@ -27,11 +27,9 @@
 
   <ItemGroup>
     <Folder Include="Api\" />
-    <Folder Include="src\app\model\" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Domain.Data\Domain.Data.csproj" />
     <ProjectReference Include="..\Domain\Domain.csproj" />
   </ItemGroup>
 

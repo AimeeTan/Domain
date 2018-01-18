@@ -5,9 +5,9 @@ declare let jQuery: any;
 @Injectable()
 export class AppConfig {
   config = {
-	  name: 'IC',
-	  title: 'IC By 360Zebra',
-	version: '1.0.17.0601',
+	  name: 'Domain',
+	  title: 'Domain By Aimee',
+	version: '1.0.18.0118',
 	/**
 	 * Whether to print and alert some log information
 	 */
