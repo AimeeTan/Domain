@@ -1,6 +1,4 @@
-﻿
-
-namespace Domain.Data
+﻿namespace Domain.Data
 {
 	using Archetypes;
 	using Store;
