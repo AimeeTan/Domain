@@ -9481,7 +9481,7 @@ exports.menus = [
         name: '系统配置',
         className: 'fa fa-cube',
         twoLevel: false,
-        url: 'system/config',
+        url: 'pages/system/config',
     },
     {
         typeName: '自动采集扫描',
@@ -9490,11 +9490,11 @@ exports.menus = [
         node: [{
                 name: '域名扫描',
                 twoLevel: false,
-                url: 'domain/scan'
+                url: 'pages/domain/scan'
             }, {
                 name: '历史记录',
                 twoLevel: false,
-                url: 'domain/list'
+                url: 'pages/domain/list'
             }]
     },
     {
@@ -9504,11 +9504,11 @@ exports.menus = [
         node: [{
                 name: '上传扫描',
                 twoLevel: false,
-                url: 'ribbon/scan'
+                url: 'pages/ribbon/scan'
             }, {
                 name: '历史记录',
                 twoLevel: false,
-                url: 'ribbon/list'
+                url: 'pages/ribbon/list'
             }]
     },
 ];

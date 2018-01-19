@@ -5,7 +5,7 @@ exports.menus = [
         name: '系统配置',
         className: 'fa fa-cube',
         twoLevel: false,
-        url: 'system/config',
+        url: 'pages/system/config',
     },
     {
         typeName: '自动采集扫描',
