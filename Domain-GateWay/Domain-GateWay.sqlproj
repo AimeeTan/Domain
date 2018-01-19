@@ -60,4 +60,10 @@
     <Folder Include="Actions" />
     <Folder Include="Functions" />
   </ItemGroup>
+  <ItemGroup>
+    <Build Include="Functions\SearchEngine_Row.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Domain-GateWay.publish.xml" />
+  </ItemGroup>
 </Project>
