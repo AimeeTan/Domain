@@ -9,6 +9,7 @@ import { PageService, apiPageUrl } from '../service/page.svc';
 
 export class SystemConfigComponent extends PaginationComponent {
 	error: string;
+	searchEngines: any;
 
 	constructor(private readonly pageSvc: PageService) {
 		super();
