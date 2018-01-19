@@ -1,5 +1,4 @@
-﻿import { RcvHubModule } from '../components/rvchubs/rcvhub.module';
-import { NgModule } from '@angular/core';
+﻿import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -14,12 +13,13 @@ import { SystemConfigComponent } from './system-config.component';
 
 
 export const routes = [
+	{ path: '', component: SystemConfigComponent, pathMatch: 'full' },
 	{ path: 'system/config', component: SystemConfigComponent, pathMatch: 'full' }
 ];
 
 @NgModule({
 	imports: [FormsModule, ReactiveFormsModule, CommonModule, RouterModule.forChild(routes), TranslateModule, NgUploaderModule,
-		PaginationModule.forRoot(), ModalModule.forRoot(), RcvHubModule],
+		PaginationModule.forRoot(), ModalModule.forRoot()],
 	declarations: [
 		SystemConfigComponent
 	],

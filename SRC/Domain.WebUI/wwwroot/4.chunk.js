@@ -1,6 +1,6 @@
-webpackJsonpac__name_([5],{
+webpackJsonpac__name_([4],{
 
-/***/ 924:
+/***/ 886:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9,7 +9,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(6);
 __webpack_require__(352);
 __webpack_require__(351);
-var base_svc_1 = __webpack_require__(908);
+var base_svc_1 = __webpack_require__(885);
 exports.apiPageUrl = {
     systemConfig: 'system/config',
 };
@@ -30,23 +30,23 @@ exports.PageService = PageService;
 
 /***/ }),
 
-/***/ 925:
+/***/ 912:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var rcvhub_module_1 = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../components/rvchubs/rcvhub.module\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 var core_1 = __webpack_require__(6);
 var common_1 = __webpack_require__(54);
 var forms_1 = __webpack_require__(95);
 var router_1 = __webpack_require__(96);
-var ngx_uploader_1 = __webpack_require__(118);
-var ngx_bootstrap_1 = __webpack_require__(885);
-var core_2 = __webpack_require__(138);
-var page_svc_1 = __webpack_require__(924);
-var system_config_component_1 = __webpack_require__(926);
+var ngx_uploader_1 = __webpack_require__(97);
+var ngx_bootstrap_1 = __webpack_require__(829);
+var core_2 = __webpack_require__(137);
+var page_svc_1 = __webpack_require__(886);
+var system_config_component_1 = __webpack_require__(913);
 exports.routes = [
+    { path: '', component: system_config_component_1.SystemConfigComponent, pathMatch: 'full' },
     { path: 'system/config', component: system_config_component_1.SystemConfigComponent, pathMatch: 'full' }
 ];
 var PagesModule = (function () {
@@ -58,7 +58,7 @@ PagesModule.routes = exports.routes;
 PagesModule = __decorate([
     core_1.NgModule({
         imports: [forms_1.FormsModule, forms_1.ReactiveFormsModule, common_1.CommonModule, router_1.RouterModule.forChild(exports.routes), core_2.TranslateModule, ngx_uploader_1.NgUploaderModule,
-            ngx_bootstrap_1.PaginationModule.forRoot(), ngx_bootstrap_1.ModalModule.forRoot(), rcvhub_module_1.RcvHubModule],
+            ngx_bootstrap_1.PaginationModule.forRoot(), ngx_bootstrap_1.ModalModule.forRoot()],
         declarations: [
             system_config_component_1.SystemConfigComponent
         ],
@@ -72,15 +72,15 @@ exports.PagesModule = PagesModule;
 
 /***/ }),
 
-/***/ 926:
+/***/ 913:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(6);
-var criteria_profile_1 = __webpack_require__(927);
-var page_svc_1 = __webpack_require__(924);
+var criteria_profile_1 = __webpack_require__(914);
+var page_svc_1 = __webpack_require__(886);
 var SystemConfigComponent = (function (_super) {
     __extends(SystemConfigComponent, _super);
     function SystemConfigComponent(pageSvc) {
@@ -104,7 +104,7 @@ var SystemConfigComponent = (function (_super) {
 }(criteria_profile_1.PaginationComponent));
 SystemConfigComponent = __decorate([
     core_1.Component({
-        template: __webpack_require__(928)
+        template: __webpack_require__(915)
     }),
     __metadata("design:paramtypes", [page_svc_1.PageService])
 ], SystemConfigComponent);
@@ -113,7 +113,7 @@ exports.SystemConfigComponent = SystemConfigComponent;
 
 /***/ }),
 
-/***/ 927:
+/***/ 914:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -259,7 +259,7 @@ exports.PaginationComponent = PaginationComponent;
 
 /***/ }),
 
-/***/ 928:
+/***/ 915:
 /***/ (function(module, exports) {
 
 module.exports = "<!DOCTYPE html>\r\n<html>\r\n<head>\r\n    <meta charset=\"utf-8\" />\r\n    <title></title>\r\n</head>\r\n<body>\r\n\t44444444\r\n</body>\r\n</html>"
@@ -267,4 +267,4 @@ module.exports = "<!DOCTYPE html>\r\n<html>\r\n<head>\r\n    <meta charset=\"utf
 /***/ })
 
 });
-//# sourceMappingURL=5.map
+//# sourceMappingURL=4.map

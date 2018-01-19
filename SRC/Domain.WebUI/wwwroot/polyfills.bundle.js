@@ -35,7 +35,7 @@ var ac_polyfills =
 /******/
 /******/ 	// objects to store loaded and loading chunks
 /******/ 	var installedChunks = {
-/******/ 		4: 0
+/******/ 		5: 0
 /******/ 	};
 /******/
 /******/ 	// The require function
@@ -16392,7 +16392,7 @@ module.exports = function(KEY, exec){
 // 19.1.2.9 / 15.2.3.2 Object.getPrototypeOf(O)
 var has         = __webpack_require__(21)
   , toObject    = __webpack_require__(26)
-  , IE_PROTO    = __webpack_require__(98)('IE_PROTO')
+  , IE_PROTO    = __webpack_require__(99)('IE_PROTO')
   , ObjectProto = Object.prototype;
 
 module.exports = Object.getPrototypeOf || function(O){
@@ -16694,7 +16694,7 @@ if(__webpack_require__(16)){
     , fails               = __webpack_require__(8)
     , $export             = __webpack_require__(2)
     , $typed              = __webpack_require__(84)
-    , $buffer             = __webpack_require__(117)
+    , $buffer             = __webpack_require__(118)
     , ctx                 = __webpack_require__(48)
     , anInstance          = __webpack_require__(64)
     , propertyDesc        = __webpack_require__(41)
@@ -16706,24 +16706,24 @@ if(__webpack_require__(16)){
     , toPrimitive         = __webpack_require__(40)
     , has                 = __webpack_require__(21)
     , same                = __webpack_require__(152)
-    , classof             = __webpack_require__(101)
+    , classof             = __webpack_require__(102)
     , isObject            = __webpack_require__(9)
     , toObject            = __webpack_require__(26)
-    , isArrayIter         = __webpack_require__(111)
+    , isArrayIter         = __webpack_require__(112)
     , create              = __webpack_require__(51)
     , getPrototypeOf      = __webpack_require__(30)
     , gOPN                = __webpack_require__(52).f
-    , getIterFn           = __webpack_require__(112)
+    , getIterFn           = __webpack_require__(113)
     , uid                 = __webpack_require__(47)
     , wks                 = __webpack_require__(12)
     , createArrayMethod   = __webpack_require__(31)
-    , createArrayIncludes = __webpack_require__(97)
+    , createArrayIncludes = __webpack_require__(98)
     , speciesConstructor  = __webpack_require__(177)
     , ArrayIterators      = __webpack_require__(81)
     , Iterators           = __webpack_require__(56)
-    , $iterDetect         = __webpack_require__(113)
+    , $iterDetect         = __webpack_require__(114)
     , setSpecies          = __webpack_require__(62)
-    , arrayFill           = __webpack_require__(114)
+    , arrayFill           = __webpack_require__(115)
     , arrayCopyWithin     = __webpack_require__(169)
     , $DP                 = __webpack_require__(14)
     , $GOPD               = __webpack_require__(35)
@@ -17623,8 +17623,8 @@ module.exports = function(index, length){
 // 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
 var anObject    = __webpack_require__(7)
   , dPs         = __webpack_require__(148)
-  , enumBugKeys = __webpack_require__(99)
-  , IE_PROTO    = __webpack_require__(98)('IE_PROTO')
+  , enumBugKeys = __webpack_require__(100)
+  , IE_PROTO    = __webpack_require__(99)('IE_PROTO')
   , Empty       = function(){ /* empty */ }
   , PROTOTYPE   = 'prototype';
 
@@ -17669,7 +17669,7 @@ module.exports = Object.create || function create(O, Properties){
 
 // 19.1.2.7 / 15.2.3.4 Object.getOwnPropertyNames(O)
 var $keys      = __webpack_require__(147)
-  , hiddenKeys = __webpack_require__(99).concat('length', 'prototype');
+  , hiddenKeys = __webpack_require__(100).concat('length', 'prototype');
 
 exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O){
   return $keys(O, hiddenKeys);
@@ -17682,7 +17682,7 @@ exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O){
 "use strict";
 
 // 19.1.3.6 Object.prototype.toString()
-var classof = __webpack_require__(101)
+var classof = __webpack_require__(102)
   , test    = {};
 test[__webpack_require__(12)('toStringTag')] = 'z';
 if(test + '' != '[object z]'){
@@ -21757,7 +21757,7 @@ var VERSION = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["Version"]('4.4.6'
 
 // 19.1.2.14 / 15.2.3.14 Object.keys(O)
 var $keys       = __webpack_require__(147)
-  , enumBugKeys = __webpack_require__(99);
+  , enumBugKeys = __webpack_require__(100);
 
 module.exports = Object.keys || function keys(O){
   return $keys(O, enumBugKeys);
@@ -22238,7 +22238,7 @@ exports.f = {}.propertyIsEnumerable;
 var $export = __webpack_require__(2)
   , defined = __webpack_require__(34)
   , fails   = __webpack_require__(8)
-  , spaces  = __webpack_require__(103)
+  , spaces  = __webpack_require__(104)
   , space   = '[' + spaces + ']'
   , non     = '\u200b\u0085'
   , ltrim   = RegExp('^' + space + space + '*')
@@ -22275,7 +22275,7 @@ module.exports = exporter;
 var $at  = __webpack_require__(160)(true);
 
 // 21.1.3.27 String.prototype[@@iterator]()
-__webpack_require__(107)(String, 'String', function(iterated){
+__webpack_require__(108)(String, 'String', function(iterated){
   this._t = String(iterated); // target
   this._i = 0;                // next index
 // 21.1.5.2.1 %StringIteratorPrototype%.next()
@@ -22338,7 +22338,7 @@ var addToUnscopables = __webpack_require__(61)
 // 22.1.3.13 Array.prototype.keys()
 // 22.1.3.29 Array.prototype.values()
 // 22.1.3.30 Array.prototype[@@iterator]()
-module.exports = __webpack_require__(107)(Array, 'Array', function(iterated, kind){
+module.exports = __webpack_require__(108)(Array, 'Array', function(iterated, kind){
   this._t = toIObject(iterated); // target
   this._i = 0;                   // next index
   this._k = kind;                // kind
@@ -22369,10 +22369,10 @@ addToUnscopables('entries');
 
 var ctx         = __webpack_require__(48)
   , call        = __webpack_require__(166)
-  , isArrayIter = __webpack_require__(111)
+  , isArrayIter = __webpack_require__(112)
   , anObject    = __webpack_require__(7)
   , toLength    = __webpack_require__(20)
-  , getIterFn   = __webpack_require__(112)
+  , getIterFn   = __webpack_require__(113)
   , BREAK       = {}
   , RETURN      = {};
 var exports = module.exports = function(iterable, entries, fn, that, ITERATOR){
@@ -22408,9 +22408,9 @@ var global            = __webpack_require__(10)
   , anInstance        = __webpack_require__(64)
   , isObject          = __webpack_require__(9)
   , fails             = __webpack_require__(8)
-  , $iterDetect       = __webpack_require__(113)
+  , $iterDetect       = __webpack_require__(114)
   , setToStringTag    = __webpack_require__(58)
-  , inheritIfRequired = __webpack_require__(104);
+  , inheritIfRequired = __webpack_require__(105);
 
 module.exports = function(NAME, wrapper, methods, common, IS_MAP, IS_WEAK){
   var Base  = global[NAME]
@@ -22627,6 +22627,13 @@ exports.ObjectUnsubscribedError = ObjectUnsubscribedError;
 /* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
+!function(e,t){ true?module.exports=t(__webpack_require__(6),__webpack_require__(54),__webpack_require__(0),__webpack_require__(3),__webpack_require__(139),__webpack_require__(191),__webpack_require__(192),__webpack_require__(193)):"function"==typeof define&&define.amd?define("ngx-uploader",["@angular/core","@angular/common","rxjs/Observable","rxjs/Subscriber","rxjs/add/observable/from","rxjs/add/observable/merge","rxjs/add/operator/combineLatest","rxjs/add/operator/mergeAll"],t):"object"==typeof exports?exports["ngx-uploader"]=t(require("@angular/core"),require("@angular/common"),require("rxjs/Observable"),require("rxjs/Subscriber"),require("rxjs/add/observable/from"),require("rxjs/add/observable/merge"),require("rxjs/add/operator/combineLatest"),require("rxjs/add/operator/mergeAll")):e["ngx-uploader"]=t(e["@angular/core"],e["@angular/common"],e["rxjs/Observable"],e["rxjs/Subscriber"],e["rxjs/add/observable/from"],e["rxjs/add/observable/merge"],e["rxjs/add/operator/combineLatest"],e["rxjs/add/operator/mergeAll"])}(this,function(e,t,r,n,i,o,s,a){return function(e){function t(n){if(r[n])return r[n].exports;var i=r[n]={i:n,l:!1,exports:{}};return e[n].call(i.exports,i,i.exports,t),i.l=!0,i.exports}var r={};return t.m=e,t.c=r,t.i=function(e){return e},t.d=function(e,r,n){t.o(e,r)||Object.defineProperty(e,r,{configurable:!1,enumerable:!0,get:n})},t.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return t.d(r,"a",r),r},t.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},t.p="/",t(t.s=6)}([function(t,r){t.exports=e},function(e,t,r){"use strict";function n(e){if(0===e)return"0 Byte";var t=["Bytes","KB","MB","GB","TB","PB"],r=Math.floor(Math.log(e)/Math.log(1024));return parseFloat((e/Math.pow(1024,r)).toFixed(2))+" "+t[r]}var i=r(0),o=(r.n(i),r(7)),s=(r.n(o),r(8)),a=(r.n(s),r(10)),u=(r.n(a),r(9)),p=(r.n(u),r(12)),l=(r.n(p),r(11));r.n(l);r.d(t,"a",function(){return c}),t.b=n,r.d(t,"c",function(){return d});var c;!function(e){e[e.Queue=0]="Queue",e[e.Uploading=1]="Uploading",e[e.Done=2]="Done",e[e.Canceled=3]="Canceled"}(c||(c={}));var d=function(){function e(){this.files=[],this.serviceEvents=new i.EventEmitter,this.uploads=[]}return e.prototype.handleFiles=function(e){var t=this;this.fileList=e,this.files=[].map.call(e,function(e,r){var n={fileIndex:r,id:t.generateId(),name:e.name,size:e.size,type:e.type,progress:{status:c.Queue,data:{percentage:0,speed:null,speedHuman:null}},lastModifiedDate:e.lastModifiedDate};return t.serviceEvents.emit({type:"addedToQueue",file:n}),n}),this.serviceEvents.emit({type:"allAddedToQueue"})},e.prototype.initInputEvents=function(e){var t=this;e.subscribe(function(e){switch(e.type){case"uploadFile":t.serviceEvents.emit({type:"start",file:e.file});var r=t.uploadFile(e.file,e).subscribe(function(e){t.serviceEvents.emit(e)});t.uploads.push({file:e.file,sub:r});break;case"uploadAll":var n=e.concurrency>0?e.concurrency:Number.POSITIVE_INFINITY,i=s.Subscriber.create(function(e){t.serviceEvents.emit(e)});t.uploads=t.uploads.concat(t.files.map(function(e){return{file:e,sub:null}}));o.Observable.from(t.files.map(function(r){return t.uploadFile(r,e)})).mergeAll(n).combineLatest(function(e){return e}).subscribe(i);break;case"cancel":var a=e.id||null;if(!a)return;var u=t.uploads.findIndex(function(e){return e.file.id===a});-1!==u&&(t.uploads[u].sub&&t.uploads[u].sub.unsubscribe(),t.serviceEvents.emit({type:"cancelled",file:t.uploads[u].file}),t.uploads[u].file.progress.status=c.Canceled);break;case"cancelAll":t.uploads.forEach(function(e){e.file.progress.status=c.Canceled,t.serviceEvents.emit({type:"cancelled",file:e.file})})}})},e.prototype.uploadFile=function(e,t){var r=this;return new o.Observable(function(i){var o=t.url,s=t.method||"POST",a=t.data||{},u=t.headers||{},p=new FileReader,l=new XMLHttpRequest,d=(new Date).getTime(),f=0;l.upload.addEventListener("progress",function(t){if(t.lengthComputable){var r=Math.round(100*t.loaded/t.total),o=(new Date).getTime()-d;d+=o,f=t.loaded-f;var s=parseInt(f/o*1e3,10);e.progress={status:c.Uploading,data:{percentage:r,speed:s,speedHuman:n(s)+"/s"}},i.next({type:"uploading",file:e})}},!1),l.upload.addEventListener("error",function(e){i.error(e),i.complete()}),l.onreadystatechange=function(){if(l.readyState===XMLHttpRequest.DONE){e.progress={status:c.Done,data:{percentage:100,speed:null,speedHuman:null}};try{e.response=JSON.parse(l.response)}catch(t){e.response=l.response}i.next({type:"done",file:e}),i.complete()}},l.open(s,o,!0);var v=new FormData;try{var h=r.fileList.item(e.fileIndex),m=r.uploads.findIndex(function(e){return e.file.size===h.size});r.uploads[m].file.progress.status===c.Canceled&&i.complete(),v.append(t.fieldName||"file",h,h.name),Object.keys(a).forEach(function(e){return v.append(e,a[e])}),Object.keys(u).forEach(function(e){return l.setRequestHeader(e,u[e])}),r.serviceEvents.emit({type:"start",file:e}),l.send(v)}catch(e){i.complete()}return function(){l.abort(),p.abort()}})},e.prototype.generateId=function(){return Math.random().toString(36).substring(7)},e}()},function(e,t,r){"use strict";var n=r(0),i=(r.n(n),r(4)),o=(r.n(i),r(1));r.d(t,"a",function(){return p});var s=this&&this.__decorate||function(e,t,r,n){var i,o=arguments.length,s=o<3?t:null===n?n=Object.getOwnPropertyDescriptor(t,r):n;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)s=Reflect.decorate(e,t,r,n);else for(var a=e.length-1;a>=0;a--)(i=e[a])&&(s=(o<3?i(s):o>3?i(t,r,s):i(t,r))||s);return o>3&&s&&Object.defineProperty(t,r,s),s},a=this&&this.__metadata||function(e,t){if("object"==typeof Reflect&&"function"==typeof Reflect.metadata)return Reflect.metadata(e,t)},u=this&&this.__param||function(e,t){return function(r,n){t(r,n,e)}},p=function(){function e(e,t){this.platform_id=e,this.elementRef=t,this.isServer=r.i(i.isPlatformServer)(this.platform_id),this.stopEvent=function(e){e.stopPropagation(),e.preventDefault()},this.upload=new o.c,this.uploadOutput=new n.EventEmitter}return e.prototype.ngOnInit=function(){var e=this;this.isServer||(this.el=this.elementRef.nativeElement,this.upload.serviceEvents.subscribe(function(t){e.uploadOutput.emit(t)}),this.uploadInput instanceof n.EventEmitter&&this.upload.initInputEvents(this.uploadInput),this.el.addEventListener("drop",this.stopEvent,!1),this.el.addEventListener("dragenter",this.stopEvent,!1),this.el.addEventListener("dragover",this.stopEvent,!1),this.el.addEventListener("dragover",this.stopEvent,!1))},e.prototype.ngOnDestroy=function(){this.isServer||this.uploadInput.unsubscribe()},e.prototype.onDrop=function(e){e.stopPropagation(),e.preventDefault();var t={type:"drop"};this.uploadOutput.emit(t),this.upload.handleFiles(e.dataTransfer.files)},e.prototype.onDragOver=function(e){if(e){var t={type:"dragOver"};this.uploadOutput.emit(t)}},e.prototype.onDragLeave=function(e){if(e){var t={type:"dragOut"};this.uploadOutput.emit(t)}},e}();s([r.i(n.Input)(),a("design:type",n.EventEmitter)],p.prototype,"uploadInput",void 0),s([r.i(n.Output)(),a("design:type",n.EventEmitter)],p.prototype,"uploadOutput",void 0),s([r.i(n.HostListener)("drop",["$event"]),a("design:type",Function),a("design:paramtypes",[Object]),a("design:returntype",void 0)],p.prototype,"onDrop",null),s([r.i(n.HostListener)("dragover",["$event"]),a("design:type",Function),a("design:paramtypes",[Event]),a("design:returntype",void 0)],p.prototype,"onDragOver",null),s([r.i(n.HostListener)("dragleave",["$event"]),a("design:type",Function),a("design:paramtypes",[Event]),a("design:returntype",void 0)],p.prototype,"onDragLeave",null),p=s([r.i(n.Directive)({selector:"[ngFileDrop]"}),u(0,r.i(n.Inject)(n.PLATFORM_ID)),a("design:paramtypes",[Object,n.ElementRef])],p)},function(e,t,r){"use strict";var n=r(0),i=(r.n(n),r(4)),o=(r.n(i),r(1));r.d(t,"a",function(){return p});var s=this&&this.__decorate||function(e,t,r,n){var i,o=arguments.length,s=o<3?t:null===n?n=Object.getOwnPropertyDescriptor(t,r):n;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)s=Reflect.decorate(e,t,r,n);else for(var a=e.length-1;a>=0;a--)(i=e[a])&&(s=(o<3?i(s):o>3?i(t,r,s):i(t,r))||s);return o>3&&s&&Object.defineProperty(t,r,s),s},a=this&&this.__metadata||function(e,t){if("object"==typeof Reflect&&"function"==typeof Reflect.metadata)return Reflect.metadata(e,t)},u=this&&this.__param||function(e,t){return function(r,n){t(r,n,e)}},p=function(){function e(e,t){var s=this;this.platform_id=e,this.elementRef=t,this.isServer=r.i(i.isPlatformServer)(this.platform_id),this.fileListener=function(){s.upload.handleFiles(s.el.files)},this.upload=new o.c,this.uploadOutput=new n.EventEmitter}return e.prototype.ngOnInit=function(){var e=this;this.isServer||(this.el=this.elementRef.nativeElement,this.el.addEventListener("change",this.fileListener,!1),this.upload.serviceEvents.subscribe(function(t){e.uploadOutput.emit(t)}),this.uploadInput instanceof n.EventEmitter&&this.upload.initInputEvents(this.uploadInput))},e.prototype.ngOnDestroy=function(){this.isServer||(this.el.removeEventListener("change",this.fileListener,!1),this.uploadInput.unsubscribe())},e}();s([r.i(n.Input)(),a("design:type",n.EventEmitter)],p.prototype,"uploadInput",void 0),s([r.i(n.Output)(),a("design:type",n.EventEmitter)],p.prototype,"uploadOutput",void 0),p=s([r.i(n.Directive)({selector:"[ngFileSelect]"}),u(0,r.i(n.Inject)(n.PLATFORM_ID)),a("design:paramtypes",[Object,n.ElementRef])],p)},function(e,r){e.exports=t},function(e,t,r){"use strict";var n=r(0),i=(r.n(n),r(2)),o=r(3);r.d(t,"a",function(){return a});var s=this&&this.__decorate||function(e,t,r,n){var i,o=arguments.length,s=o<3?t:null===n?n=Object.getOwnPropertyDescriptor(t,r):n;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)s=Reflect.decorate(e,t,r,n);else for(var a=e.length-1;a>=0;a--)(i=e[a])&&(s=(o<3?i(s):o>3?i(t,r,s):i(t,r))||s);return o>3&&s&&Object.defineProperty(t,r,s),s},a=function(){function e(){}return e}();a=s([r.i(n.NgModule)({declarations:[o.a,i.a],exports:[o.a,i.a]})],a)},function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var n=r(5);r.d(t,"NgUploaderModule",function(){return n.a});var i=r(1);r.d(t,"UploadStatus",function(){return i.a}),r.d(t,"humanizeBytes",function(){return i.b}),r.d(t,"NgUploaderService",function(){return i.c});var o=r(3);r.d(t,"NgFileSelectDirective",function(){return o.a});var s=r(2);r.d(t,"NgFileDropDirective",function(){return s.a})},function(e,t){e.exports=r},function(e,t){e.exports=n},function(e,t){e.exports=i},function(e,t){e.exports=o},function(e,t){e.exports=s},function(e,t){e.exports=a}])});
+//# sourceMappingURL=ngx-uploader.umd.js.map
+
+/***/ }),
+/* 98 */
+/***/ (function(module, exports, __webpack_require__) {
+
 // false -> Array#indexOf
 // true  -> Array#includes
 var toIObject = __webpack_require__(27)
@@ -22650,7 +22657,7 @@ module.exports = function(IS_INCLUDES){
 };
 
 /***/ }),
-/* 98 */
+/* 99 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var shared = __webpack_require__(75)('keys')
@@ -22660,7 +22667,7 @@ module.exports = function(key){
 };
 
 /***/ }),
-/* 99 */
+/* 100 */
 /***/ (function(module, exports) {
 
 // IE 8- don't enum bug keys
@@ -22669,7 +22676,7 @@ module.exports = (
 ).split(',');
 
 /***/ }),
-/* 100 */
+/* 101 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.2.2 IsArray(argument)
@@ -22679,7 +22686,7 @@ module.exports = Array.isArray || function isArray(arg){
 };
 
 /***/ }),
-/* 101 */
+/* 102 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // getting tag from 19.1.3.6 Object.prototype.toString()
@@ -22707,7 +22714,7 @@ module.exports = function(it){
 };
 
 /***/ }),
-/* 102 */
+/* 103 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Works with __proto__ only. Old v8 can't work with null proto objects.
@@ -22737,18 +22744,18 @@ module.exports = {
 };
 
 /***/ }),
-/* 103 */
+/* 104 */
 /***/ (function(module, exports) {
 
 module.exports = '\x09\x0A\x0B\x0C\x0D\x20\xA0\u1680\u180E\u2000\u2001\u2002\u2003' +
   '\u2004\u2005\u2006\u2007\u2008\u2009\u200A\u202F\u205F\u3000\u2028\u2029\uFEFF';
 
 /***/ }),
-/* 104 */
+/* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isObject       = __webpack_require__(9)
-  , setPrototypeOf = __webpack_require__(102).set;
+  , setPrototypeOf = __webpack_require__(103).set;
 module.exports = function(that, target, C){
   var P, S = target.constructor;
   if(S !== C && typeof S == 'function' && (P = S.prototype) !== C.prototype && isObject(P) && setPrototypeOf){
@@ -22757,7 +22764,7 @@ module.exports = function(that, target, C){
 };
 
 /***/ }),
-/* 105 */
+/* 106 */
 /***/ (function(module, exports) {
 
 // 20.2.2.28 Math.sign(x)
@@ -22766,7 +22773,7 @@ module.exports = Math.sign || function sign(x){
 };
 
 /***/ }),
-/* 106 */
+/* 107 */
 /***/ (function(module, exports) {
 
 // 20.2.2.14 Math.expm1(x)
@@ -22781,7 +22788,7 @@ module.exports = (!$expm1
 } : $expm1;
 
 /***/ }),
-/* 107 */
+/* 108 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22857,11 +22864,11 @@ module.exports = function(Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCED
 };
 
 /***/ }),
-/* 108 */
+/* 109 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // helper for String#{startsWith, endsWith, includes}
-var isRegExp = __webpack_require__(109)
+var isRegExp = __webpack_require__(110)
   , defined  = __webpack_require__(34);
 
 module.exports = function(that, searchString, NAME){
@@ -22870,7 +22877,7 @@ module.exports = function(that, searchString, NAME){
 };
 
 /***/ }),
-/* 109 */
+/* 110 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.2.8 IsRegExp(argument)
@@ -22883,7 +22890,7 @@ module.exports = function(it){
 };
 
 /***/ }),
-/* 110 */
+/* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var MATCH = __webpack_require__(12)('match');
@@ -22900,7 +22907,7 @@ module.exports = function(KEY){
 };
 
 /***/ }),
-/* 111 */
+/* 112 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // check on default Array iterator
@@ -22913,10 +22920,10 @@ module.exports = function(it){
 };
 
 /***/ }),
-/* 112 */
+/* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var classof   = __webpack_require__(101)
+var classof   = __webpack_require__(102)
   , ITERATOR  = __webpack_require__(12)('iterator')
   , Iterators = __webpack_require__(56);
 module.exports = __webpack_require__(11).getIteratorMethod = function(it){
@@ -22926,7 +22933,7 @@ module.exports = __webpack_require__(11).getIteratorMethod = function(it){
 };
 
 /***/ }),
-/* 113 */
+/* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var ITERATOR     = __webpack_require__(12)('iterator')
@@ -22952,7 +22959,7 @@ module.exports = function(exec, skipClosing){
 };
 
 /***/ }),
-/* 114 */
+/* 115 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22973,7 +22980,7 @@ module.exports = function fill(value /*, start = 0, end = @length */){
 };
 
 /***/ }),
-/* 115 */
+/* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22992,7 +22999,7 @@ module.exports = function(){
 };
 
 /***/ }),
-/* 116 */
+/* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $iterators    = __webpack_require__(81)
@@ -23019,7 +23026,7 @@ for(var collections = ['NodeList', 'DOMTokenList', 'MediaList', 'StyleSheetList'
 }
 
 /***/ }),
-/* 117 */
+/* 118 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23036,7 +23043,7 @@ var global         = __webpack_require__(10)
   , toLength       = __webpack_require__(20)
   , gOPN           = __webpack_require__(52).f
   , dP             = __webpack_require__(14).f
-  , arrayFill      = __webpack_require__(114)
+  , arrayFill      = __webpack_require__(115)
   , setToStringTag = __webpack_require__(58)
   , ARRAY_BUFFER   = 'ArrayBuffer'
   , DATA_VIEW      = 'DataView'
@@ -23296,13 +23303,6 @@ setToStringTag($DataView, DATA_VIEW);
 hide($DataView[PROTOTYPE], $typed.VIEW, true);
 exports[ARRAY_BUFFER] = $ArrayBuffer;
 exports[DATA_VIEW] = $DataView;
-
-/***/ }),
-/* 118 */
-/***/ (function(module, exports, __webpack_require__) {
-
-!function(e,t){ true?module.exports=t(__webpack_require__(6),__webpack_require__(54),__webpack_require__(0),__webpack_require__(3),__webpack_require__(139),__webpack_require__(191),__webpack_require__(192),__webpack_require__(193)):"function"==typeof define&&define.amd?define("ngx-uploader",["@angular/core","@angular/common","rxjs/Observable","rxjs/Subscriber","rxjs/add/observable/from","rxjs/add/observable/merge","rxjs/add/operator/combineLatest","rxjs/add/operator/mergeAll"],t):"object"==typeof exports?exports["ngx-uploader"]=t(require("@angular/core"),require("@angular/common"),require("rxjs/Observable"),require("rxjs/Subscriber"),require("rxjs/add/observable/from"),require("rxjs/add/observable/merge"),require("rxjs/add/operator/combineLatest"),require("rxjs/add/operator/mergeAll")):e["ngx-uploader"]=t(e["@angular/core"],e["@angular/common"],e["rxjs/Observable"],e["rxjs/Subscriber"],e["rxjs/add/observable/from"],e["rxjs/add/observable/merge"],e["rxjs/add/operator/combineLatest"],e["rxjs/add/operator/mergeAll"])}(this,function(e,t,r,n,i,o,s,a){return function(e){function t(n){if(r[n])return r[n].exports;var i=r[n]={i:n,l:!1,exports:{}};return e[n].call(i.exports,i,i.exports,t),i.l=!0,i.exports}var r={};return t.m=e,t.c=r,t.i=function(e){return e},t.d=function(e,r,n){t.o(e,r)||Object.defineProperty(e,r,{configurable:!1,enumerable:!0,get:n})},t.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return t.d(r,"a",r),r},t.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},t.p="/",t(t.s=6)}([function(t,r){t.exports=e},function(e,t,r){"use strict";function n(e){if(0===e)return"0 Byte";var t=["Bytes","KB","MB","GB","TB","PB"],r=Math.floor(Math.log(e)/Math.log(1024));return parseFloat((e/Math.pow(1024,r)).toFixed(2))+" "+t[r]}var i=r(0),o=(r.n(i),r(7)),s=(r.n(o),r(8)),a=(r.n(s),r(10)),u=(r.n(a),r(9)),p=(r.n(u),r(12)),l=(r.n(p),r(11));r.n(l);r.d(t,"a",function(){return c}),t.b=n,r.d(t,"c",function(){return d});var c;!function(e){e[e.Queue=0]="Queue",e[e.Uploading=1]="Uploading",e[e.Done=2]="Done",e[e.Canceled=3]="Canceled"}(c||(c={}));var d=function(){function e(){this.files=[],this.serviceEvents=new i.EventEmitter,this.uploads=[]}return e.prototype.handleFiles=function(e){var t=this;this.fileList=e,this.files=[].map.call(e,function(e,r){var n={fileIndex:r,id:t.generateId(),name:e.name,size:e.size,type:e.type,progress:{status:c.Queue,data:{percentage:0,speed:null,speedHuman:null}},lastModifiedDate:e.lastModifiedDate};return t.serviceEvents.emit({type:"addedToQueue",file:n}),n}),this.serviceEvents.emit({type:"allAddedToQueue"})},e.prototype.initInputEvents=function(e){var t=this;e.subscribe(function(e){switch(e.type){case"uploadFile":t.serviceEvents.emit({type:"start",file:e.file});var r=t.uploadFile(e.file,e).subscribe(function(e){t.serviceEvents.emit(e)});t.uploads.push({file:e.file,sub:r});break;case"uploadAll":var n=e.concurrency>0?e.concurrency:Number.POSITIVE_INFINITY,i=s.Subscriber.create(function(e){t.serviceEvents.emit(e)});t.uploads=t.uploads.concat(t.files.map(function(e){return{file:e,sub:null}}));o.Observable.from(t.files.map(function(r){return t.uploadFile(r,e)})).mergeAll(n).combineLatest(function(e){return e}).subscribe(i);break;case"cancel":var a=e.id||null;if(!a)return;var u=t.uploads.findIndex(function(e){return e.file.id===a});-1!==u&&(t.uploads[u].sub&&t.uploads[u].sub.unsubscribe(),t.serviceEvents.emit({type:"cancelled",file:t.uploads[u].file}),t.uploads[u].file.progress.status=c.Canceled);break;case"cancelAll":t.uploads.forEach(function(e){e.file.progress.status=c.Canceled,t.serviceEvents.emit({type:"cancelled",file:e.file})})}})},e.prototype.uploadFile=function(e,t){var r=this;return new o.Observable(function(i){var o=t.url,s=t.method||"POST",a=t.data||{},u=t.headers||{},p=new FileReader,l=new XMLHttpRequest,d=(new Date).getTime(),f=0;l.upload.addEventListener("progress",function(t){if(t.lengthComputable){var r=Math.round(100*t.loaded/t.total),o=(new Date).getTime()-d;d+=o,f=t.loaded-f;var s=parseInt(f/o*1e3,10);e.progress={status:c.Uploading,data:{percentage:r,speed:s,speedHuman:n(s)+"/s"}},i.next({type:"uploading",file:e})}},!1),l.upload.addEventListener("error",function(e){i.error(e),i.complete()}),l.onreadystatechange=function(){if(l.readyState===XMLHttpRequest.DONE){e.progress={status:c.Done,data:{percentage:100,speed:null,speedHuman:null}};try{e.response=JSON.parse(l.response)}catch(t){e.response=l.response}i.next({type:"done",file:e}),i.complete()}},l.open(s,o,!0);var v=new FormData;try{var h=r.fileList.item(e.fileIndex),m=r.uploads.findIndex(function(e){return e.file.size===h.size});r.uploads[m].file.progress.status===c.Canceled&&i.complete(),v.append(t.fieldName||"file",h,h.name),Object.keys(a).forEach(function(e){return v.append(e,a[e])}),Object.keys(u).forEach(function(e){return l.setRequestHeader(e,u[e])}),r.serviceEvents.emit({type:"start",file:e}),l.send(v)}catch(e){i.complete()}return function(){l.abort(),p.abort()}})},e.prototype.generateId=function(){return Math.random().toString(36).substring(7)},e}()},function(e,t,r){"use strict";var n=r(0),i=(r.n(n),r(4)),o=(r.n(i),r(1));r.d(t,"a",function(){return p});var s=this&&this.__decorate||function(e,t,r,n){var i,o=arguments.length,s=o<3?t:null===n?n=Object.getOwnPropertyDescriptor(t,r):n;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)s=Reflect.decorate(e,t,r,n);else for(var a=e.length-1;a>=0;a--)(i=e[a])&&(s=(o<3?i(s):o>3?i(t,r,s):i(t,r))||s);return o>3&&s&&Object.defineProperty(t,r,s),s},a=this&&this.__metadata||function(e,t){if("object"==typeof Reflect&&"function"==typeof Reflect.metadata)return Reflect.metadata(e,t)},u=this&&this.__param||function(e,t){return function(r,n){t(r,n,e)}},p=function(){function e(e,t){this.platform_id=e,this.elementRef=t,this.isServer=r.i(i.isPlatformServer)(this.platform_id),this.stopEvent=function(e){e.stopPropagation(),e.preventDefault()},this.upload=new o.c,this.uploadOutput=new n.EventEmitter}return e.prototype.ngOnInit=function(){var e=this;this.isServer||(this.el=this.elementRef.nativeElement,this.upload.serviceEvents.subscribe(function(t){e.uploadOutput.emit(t)}),this.uploadInput instanceof n.EventEmitter&&this.upload.initInputEvents(this.uploadInput),this.el.addEventListener("drop",this.stopEvent,!1),this.el.addEventListener("dragenter",this.stopEvent,!1),this.el.addEventListener("dragover",this.stopEvent,!1),this.el.addEventListener("dragover",this.stopEvent,!1))},e.prototype.ngOnDestroy=function(){this.isServer||this.uploadInput.unsubscribe()},e.prototype.onDrop=function(e){e.stopPropagation(),e.preventDefault();var t={type:"drop"};this.uploadOutput.emit(t),this.upload.handleFiles(e.dataTransfer.files)},e.prototype.onDragOver=function(e){if(e){var t={type:"dragOver"};this.uploadOutput.emit(t)}},e.prototype.onDragLeave=function(e){if(e){var t={type:"dragOut"};this.uploadOutput.emit(t)}},e}();s([r.i(n.Input)(),a("design:type",n.EventEmitter)],p.prototype,"uploadInput",void 0),s([r.i(n.Output)(),a("design:type",n.EventEmitter)],p.prototype,"uploadOutput",void 0),s([r.i(n.HostListener)("drop",["$event"]),a("design:type",Function),a("design:paramtypes",[Object]),a("design:returntype",void 0)],p.prototype,"onDrop",null),s([r.i(n.HostListener)("dragover",["$event"]),a("design:type",Function),a("design:paramtypes",[Event]),a("design:returntype",void 0)],p.prototype,"onDragOver",null),s([r.i(n.HostListener)("dragleave",["$event"]),a("design:type",Function),a("design:paramtypes",[Event]),a("design:returntype",void 0)],p.prototype,"onDragLeave",null),p=s([r.i(n.Directive)({selector:"[ngFileDrop]"}),u(0,r.i(n.Inject)(n.PLATFORM_ID)),a("design:paramtypes",[Object,n.ElementRef])],p)},function(e,t,r){"use strict";var n=r(0),i=(r.n(n),r(4)),o=(r.n(i),r(1));r.d(t,"a",function(){return p});var s=this&&this.__decorate||function(e,t,r,n){var i,o=arguments.length,s=o<3?t:null===n?n=Object.getOwnPropertyDescriptor(t,r):n;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)s=Reflect.decorate(e,t,r,n);else for(var a=e.length-1;a>=0;a--)(i=e[a])&&(s=(o<3?i(s):o>3?i(t,r,s):i(t,r))||s);return o>3&&s&&Object.defineProperty(t,r,s),s},a=this&&this.__metadata||function(e,t){if("object"==typeof Reflect&&"function"==typeof Reflect.metadata)return Reflect.metadata(e,t)},u=this&&this.__param||function(e,t){return function(r,n){t(r,n,e)}},p=function(){function e(e,t){var s=this;this.platform_id=e,this.elementRef=t,this.isServer=r.i(i.isPlatformServer)(this.platform_id),this.fileListener=function(){s.upload.handleFiles(s.el.files)},this.upload=new o.c,this.uploadOutput=new n.EventEmitter}return e.prototype.ngOnInit=function(){var e=this;this.isServer||(this.el=this.elementRef.nativeElement,this.el.addEventListener("change",this.fileListener,!1),this.upload.serviceEvents.subscribe(function(t){e.uploadOutput.emit(t)}),this.uploadInput instanceof n.EventEmitter&&this.upload.initInputEvents(this.uploadInput))},e.prototype.ngOnDestroy=function(){this.isServer||(this.el.removeEventListener("change",this.fileListener,!1),this.uploadInput.unsubscribe())},e}();s([r.i(n.Input)(),a("design:type",n.EventEmitter)],p.prototype,"uploadInput",void 0),s([r.i(n.Output)(),a("design:type",n.EventEmitter)],p.prototype,"uploadOutput",void 0),p=s([r.i(n.Directive)({selector:"[ngFileSelect]"}),u(0,r.i(n.Inject)(n.PLATFORM_ID)),a("design:paramtypes",[Object,n.ElementRef])],p)},function(e,r){e.exports=t},function(e,t,r){"use strict";var n=r(0),i=(r.n(n),r(2)),o=r(3);r.d(t,"a",function(){return a});var s=this&&this.__decorate||function(e,t,r,n){var i,o=arguments.length,s=o<3?t:null===n?n=Object.getOwnPropertyDescriptor(t,r):n;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)s=Reflect.decorate(e,t,r,n);else for(var a=e.length-1;a>=0;a--)(i=e[a])&&(s=(o<3?i(s):o>3?i(t,r,s):i(t,r))||s);return o>3&&s&&Object.defineProperty(t,r,s),s},a=function(){function e(){}return e}();a=s([r.i(n.NgModule)({declarations:[o.a,i.a],exports:[o.a,i.a]})],a)},function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var n=r(5);r.d(t,"NgUploaderModule",function(){return n.a});var i=r(1);r.d(t,"UploadStatus",function(){return i.a}),r.d(t,"humanizeBytes",function(){return i.b}),r.d(t,"NgUploaderService",function(){return i.c});var o=r(3);r.d(t,"NgFileSelectDirective",function(){return o.a});var s=r(2);r.d(t,"NgFileDropDirective",function(){return s.a})},function(e,t){e.exports=r},function(e,t){e.exports=n},function(e,t){e.exports=i},function(e,t){e.exports=o},function(e,t){e.exports=s},function(e,t){e.exports=a}])});
-//# sourceMappingURL=ngx-uploader.umd.js.map
 
 /***/ }),
 /* 119 */
@@ -23675,7 +23675,7 @@ var global         = __webpack_require__(10)
   , wksDefine      = __webpack_require__(358)
   , keyOf          = __webpack_require__(359)
   , enumKeys       = __webpack_require__(360)
-  , isArray        = __webpack_require__(100)
+  , isArray        = __webpack_require__(101)
   , anObject       = __webpack_require__(7)
   , toIObject      = __webpack_require__(27)
   , toPrimitive    = __webpack_require__(40)
@@ -23926,8 +23926,8 @@ exports.f = __webpack_require__(12);
 
 var has          = __webpack_require__(21)
   , toIObject    = __webpack_require__(27)
-  , arrayIndexOf = __webpack_require__(97)(false)
-  , IE_PROTO     = __webpack_require__(98)('IE_PROTO');
+  , arrayIndexOf = __webpack_require__(98)(false)
+  , IE_PROTO     = __webpack_require__(99)('IE_PROTO');
 
 module.exports = function(object, names){
   var O      = toIObject(object)
@@ -24075,7 +24075,7 @@ module.exports = Function.bind || function bind(that /*, args... */){
 
 var $parseInt = __webpack_require__(10).parseInt
   , $trim     = __webpack_require__(78).trim
-  , ws        = __webpack_require__(103)
+  , ws        = __webpack_require__(104)
   , hex       = /^[\-+]?0[xX]/;
 
 module.exports = $parseInt(ws + '08') !== 8 || $parseInt(ws + '0x16') !== 22 ? function parseInt(str, radix){
@@ -24090,7 +24090,7 @@ module.exports = $parseInt(ws + '08') !== 8 || $parseInt(ws + '0x16') !== 22 ? f
 var $parseFloat = __webpack_require__(10).parseFloat
   , $trim       = __webpack_require__(78).trim;
 
-module.exports = 1 / $parseFloat(__webpack_require__(103) + '-0') !== -Infinity ? function parseFloat(str){
+module.exports = 1 / $parseFloat(__webpack_require__(104) + '-0') !== -Infinity ? function parseFloat(str){
   var string = $trim(String(str), 3)
     , result = $parseFloat(string);
   return result === 0 && string.charAt(0) == '-' ? -0 : result;
@@ -24239,7 +24239,7 @@ __webpack_require__(80)('search', 1, function(defined, SEARCH, $search){
 // @@split logic
 __webpack_require__(80)('split', 2, function(defined, SPLIT, $split){
   'use strict';
-  var isRegExp   = __webpack_require__(109)
+  var isRegExp   = __webpack_require__(110)
     , _split     = $split
     , $push      = [].push
     , $SPLIT     = 'split'
@@ -24418,7 +24418,7 @@ module.exports = function(done, value){
 // 21.2.5.3 get RegExp.prototype.flags()
 if(__webpack_require__(16) && /./g.flags != 'g')__webpack_require__(14).f(RegExp.prototype, 'flags', {
   configurable: true,
-  get: __webpack_require__(115)
+  get: __webpack_require__(116)
 });
 
 /***/ }),
@@ -24457,7 +24457,7 @@ var dP          = __webpack_require__(14).f
   , anInstance  = __webpack_require__(64)
   , defined     = __webpack_require__(34)
   , forOf       = __webpack_require__(82)
-  , $iterDefine = __webpack_require__(107)
+  , $iterDefine = __webpack_require__(108)
   , step        = __webpack_require__(170)
   , setSpecies  = __webpack_require__(62)
   , DESCRIPTORS = __webpack_require__(16)
@@ -25751,7 +25751,7 @@ __webpack_require__(506);
 __webpack_require__(517);
 // Typescript emit helpers polyfill
 __webpack_require__(519);
-__webpack_require__(118);
+__webpack_require__(97);
 if (false) {
     // Production
 }
@@ -26023,7 +26023,7 @@ $export($export.S, 'Object', {is: __webpack_require__(152)});
 
 // 19.1.3.19 Object.setPrototypeOf(O, proto)
 var $export = __webpack_require__(2);
-$export($export.S, 'Object', {setPrototypeOf: __webpack_require__(102).set});
+$export($export.S, 'Object', {setPrototypeOf: __webpack_require__(103).set});
 
 /***/ }),
 /* 378 */
@@ -26172,7 +26172,7 @@ module.exports = __webpack_require__(11).Number;
 var global            = __webpack_require__(10)
   , has               = __webpack_require__(21)
   , cof               = __webpack_require__(49)
-  , inheritIfRequired = __webpack_require__(104)
+  , inheritIfRequired = __webpack_require__(105)
   , toPrimitive       = __webpack_require__(40)
   , fails             = __webpack_require__(8)
   , gOPN              = __webpack_require__(52).f
@@ -26559,7 +26559,7 @@ $export($export.S + $export.F * !($atanh && 1 / $atanh(-0) < 0), 'Math', {
 
 // 20.2.2.9 Math.cbrt(x)
 var $export = __webpack_require__(2)
-  , sign    = __webpack_require__(105);
+  , sign    = __webpack_require__(106);
 
 $export($export.S, 'Math', {
   cbrt: function cbrt(x){
@@ -26600,7 +26600,7 @@ $export($export.S, 'Math', {
 
 // 20.2.2.14 Math.expm1(x)
 var $export = __webpack_require__(2)
-  , $expm1  = __webpack_require__(106);
+  , $expm1  = __webpack_require__(107);
 
 $export($export.S + $export.F * ($expm1 != Math.expm1), 'Math', {expm1: $expm1});
 
@@ -26610,7 +26610,7 @@ $export($export.S + $export.F * ($expm1 != Math.expm1), 'Math', {expm1: $expm1})
 
 // 20.2.2.16 Math.fround(x)
 var $export   = __webpack_require__(2)
-  , sign      = __webpack_require__(105)
+  , sign      = __webpack_require__(106)
   , pow       = Math.pow
   , EPSILON   = pow(2, -52)
   , EPSILON32 = pow(2, -23)
@@ -26729,7 +26729,7 @@ $export($export.S, 'Math', {
 // 20.2.2.28 Math.sign(x)
 var $export = __webpack_require__(2);
 
-$export($export.S, 'Math', {sign: __webpack_require__(105)});
+$export($export.S, 'Math', {sign: __webpack_require__(106)});
 
 /***/ }),
 /* 415 */
@@ -26737,7 +26737,7 @@ $export($export.S, 'Math', {sign: __webpack_require__(105)});
 
 // 20.2.2.30 Math.sinh(x)
 var $export = __webpack_require__(2)
-  , expm1   = __webpack_require__(106)
+  , expm1   = __webpack_require__(107)
   , exp     = Math.exp;
 
 // V8 near Chromium 38 has a problem with very small numbers
@@ -26757,7 +26757,7 @@ $export($export.S + $export.F * __webpack_require__(8)(function(){
 
 // 20.2.2.33 Math.tanh(x)
 var $export = __webpack_require__(2)
-  , expm1   = __webpack_require__(106)
+  , expm1   = __webpack_require__(107)
   , exp     = Math.exp;
 
 $export($export.S, 'Math', {
@@ -26901,11 +26901,11 @@ $export($export.P, 'String', {
 
 var $export   = __webpack_require__(2)
   , toLength  = __webpack_require__(20)
-  , context   = __webpack_require__(108)
+  , context   = __webpack_require__(109)
   , ENDS_WITH = 'endsWith'
   , $endsWith = ''[ENDS_WITH];
 
-$export($export.P + $export.F * __webpack_require__(110)(ENDS_WITH), 'String', {
+$export($export.P + $export.F * __webpack_require__(111)(ENDS_WITH), 'String', {
   endsWith: function endsWith(searchString /*, endPosition = @length */){
     var that = context(this, searchString, ENDS_WITH)
       , endPosition = arguments.length > 1 ? arguments[1] : undefined
@@ -26926,10 +26926,10 @@ $export($export.P + $export.F * __webpack_require__(110)(ENDS_WITH), 'String', {
 // 21.1.3.7 String.prototype.includes(searchString, position = 0)
 
 var $export  = __webpack_require__(2)
-  , context  = __webpack_require__(108)
+  , context  = __webpack_require__(109)
   , INCLUDES = 'includes';
 
-$export($export.P + $export.F * __webpack_require__(110)(INCLUDES), 'String', {
+$export($export.P + $export.F * __webpack_require__(111)(INCLUDES), 'String', {
   includes: function includes(searchString /*, position = 0 */){
     return !!~context(this, searchString, INCLUDES)
       .indexOf(searchString, arguments.length > 1 ? arguments[1] : undefined);
@@ -26956,11 +26956,11 @@ $export($export.P, 'String', {
 
 var $export     = __webpack_require__(2)
   , toLength    = __webpack_require__(20)
-  , context     = __webpack_require__(108)
+  , context     = __webpack_require__(109)
   , STARTS_WITH = 'startsWith'
   , $startsWith = ''[STARTS_WITH];
 
-$export($export.P + $export.F * __webpack_require__(110)(STARTS_WITH), 'String', {
+$export($export.P + $export.F * __webpack_require__(111)(STARTS_WITH), 'String', {
   startsWith: function startsWith(searchString /*, position = 0 */){
     var that   = context(this, searchString, STARTS_WITH)
       , index  = toLength(Math.min(arguments.length > 1 ? arguments[1] : undefined, that.length))
@@ -27289,7 +27289,7 @@ module.exports = __webpack_require__(11).Array;
 // 22.1.2.2 / 15.4.3.2 Array.isArray(arg)
 var $export = __webpack_require__(2);
 
-$export($export.S, 'Array', {isArray: __webpack_require__(100)});
+$export($export.S, 'Array', {isArray: __webpack_require__(101)});
 
 /***/ }),
 /* 449 */
@@ -27301,12 +27301,12 @@ var ctx            = __webpack_require__(48)
   , $export        = __webpack_require__(2)
   , toObject       = __webpack_require__(26)
   , call           = __webpack_require__(166)
-  , isArrayIter    = __webpack_require__(111)
+  , isArrayIter    = __webpack_require__(112)
   , toLength       = __webpack_require__(20)
   , createProperty = __webpack_require__(167)
-  , getIterFn      = __webpack_require__(112);
+  , getIterFn      = __webpack_require__(113);
 
-$export($export.S + $export.F * !__webpack_require__(113)(function(iter){ Array.from(iter); }), 'Array', {
+$export($export.S + $export.F * !__webpack_require__(114)(function(iter){ Array.from(iter); }), 'Array', {
   // 22.1.2.1 Array.from(arrayLike, mapfn = undefined, thisArg = undefined)
   from: function from(arrayLike/*, mapfn = undefined, thisArg = undefined*/){
     var O       = toObject(arrayLike)
@@ -27474,7 +27474,7 @@ module.exports = function(original, length){
 /***/ (function(module, exports, __webpack_require__) {
 
 var isObject = __webpack_require__(9)
-  , isArray  = __webpack_require__(100)
+  , isArray  = __webpack_require__(101)
   , SPECIES  = __webpack_require__(12)('species');
 
 module.exports = function(original){
@@ -27593,7 +27593,7 @@ $export($export.P + $export.F * !__webpack_require__(28)([].reduceRight, true), 
 "use strict";
 
 var $export       = __webpack_require__(2)
-  , $indexOf      = __webpack_require__(97)(false)
+  , $indexOf      = __webpack_require__(98)(false)
   , $native       = [].indexOf
   , NEGATIVE_ZERO = !!$native && 1 / [1].indexOf(1, -0) < 0;
 
@@ -27653,7 +27653,7 @@ __webpack_require__(61)('copyWithin');
 // 22.1.3.6 Array.prototype.fill(value, start = 0, end = this.length)
 var $export = __webpack_require__(2);
 
-$export($export.P, 'Array', {fill: __webpack_require__(114)});
+$export($export.P, 'Array', {fill: __webpack_require__(115)});
 
 __webpack_require__(61)('fill');
 
@@ -27721,11 +27721,11 @@ module.exports = __webpack_require__(11).RegExp;
 /***/ (function(module, exports, __webpack_require__) {
 
 var global            = __webpack_require__(10)
-  , inheritIfRequired = __webpack_require__(104)
+  , inheritIfRequired = __webpack_require__(105)
   , dP                = __webpack_require__(14).f
   , gOPN              = __webpack_require__(52).f
-  , isRegExp          = __webpack_require__(109)
-  , $flags            = __webpack_require__(115)
+  , isRegExp          = __webpack_require__(110)
+  , $flags            = __webpack_require__(116)
   , $RegExp           = global.RegExp
   , Base              = $RegExp
   , proto             = $RegExp.prototype
@@ -27772,7 +27772,7 @@ __webpack_require__(62)('RegExp');
 
 __webpack_require__(171);
 var anObject    = __webpack_require__(7)
-  , $flags      = __webpack_require__(115)
+  , $flags      = __webpack_require__(116)
   , DESCRIPTORS = __webpack_require__(16)
   , TO_STRING   = 'toString'
   , $toString   = /./[TO_STRING];
@@ -27801,7 +27801,7 @@ if(__webpack_require__(8)(function(){ return $toString.call({source: 'a', flags:
 
 __webpack_require__(53);
 __webpack_require__(79);
-__webpack_require__(116);
+__webpack_require__(117);
 __webpack_require__(172);
 module.exports = __webpack_require__(11).Map;
 
@@ -27811,7 +27811,7 @@ module.exports = __webpack_require__(11).Map;
 
 __webpack_require__(53);
 __webpack_require__(79);
-__webpack_require__(116);
+__webpack_require__(117);
 __webpack_require__(174);
 module.exports = __webpack_require__(11).Set;
 
@@ -27829,7 +27829,7 @@ module.exports = __webpack_require__(11).WeakMap;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(53);
-__webpack_require__(116);
+__webpack_require__(117);
 __webpack_require__(477);
 module.exports = __webpack_require__(11).WeakSet;
 
@@ -27877,7 +27877,7 @@ module.exports = __webpack_require__(11);
 
 var $export      = __webpack_require__(2)
   , $typed       = __webpack_require__(84)
-  , buffer       = __webpack_require__(117)
+  , buffer       = __webpack_require__(118)
   , anObject     = __webpack_require__(7)
   , toIndex      = __webpack_require__(50)
   , toLength     = __webpack_require__(20)
@@ -27927,7 +27927,7 @@ __webpack_require__(62)(ARRAY_BUFFER);
 
 var $export = __webpack_require__(2);
 $export($export.G + $export.W + $export.F * !__webpack_require__(84).ABV, {
-  DataView: __webpack_require__(117).DataView
+  DataView: __webpack_require__(118).DataView
 });
 
 /***/ }),
@@ -28360,7 +28360,7 @@ $export($export.S, 'Reflect', {set: set});
 
 // 26.1.14 Reflect.setPrototypeOf(target, proto)
 var $export  = __webpack_require__(2)
-  , setProto = __webpack_require__(102);
+  , setProto = __webpack_require__(103);
 
 if(setProto)$export($export.S, 'Reflect', {
   setPrototypeOf: function setPrototypeOf(target, proto){

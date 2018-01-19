@@ -6697,8 +6697,7 @@ var ReplayEvent = (function () {
 //# sourceMappingURL=ReplaySubject.js.map
 
 /***/ }),
-/* 137 */,
-/* 138 */
+/* 137 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6797,6 +6796,7 @@ TranslateModule.ctorParameters = function () { return []; };
 
 
 /***/ }),
+/* 138 */,
 /* 139 */,
 /* 140 */,
 /* 141 */
@@ -22131,13 +22131,13 @@ var core_1 = __webpack_require__(6);
 var platform_browser_1 = __webpack_require__(39);
 var animations_1 = __webpack_require__(535);
 var forms_1 = __webpack_require__(95);
-var http_1 = __webpack_require__(137);
+var http_1 = __webpack_require__(138);
 var router_1 = __webpack_require__(96);
 var hmr_1 = __webpack_require__(127);
-var core_2 = __webpack_require__(138);
+var core_2 = __webpack_require__(137);
 var http_loader_1 = __webpack_require__(540);
 var ng2_date_time_picker_1 = __webpack_require__(542);
-var ngx_uploader_1 = __webpack_require__(118);
+var ngx_uploader_1 = __webpack_require__(97);
 /*
  * Platform and Environment providers/directives/pipes
  */
@@ -40829,7 +40829,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
  */
 var core_1 = __webpack_require__(6);
 var app_service_1 = __webpack_require__(349);
-var core_2 = __webpack_require__(138);
+var core_2 = __webpack_require__(137);
 /*
  * App Component
  * Top Level Component
