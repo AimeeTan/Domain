@@ -2,6 +2,5 @@
 
 namespace Domain.Data.Store
 {
-	//partial class SearchEngine_RowResult : iSearchEngine { }
-
+	partial class SearchEngine_RowResult : iSearchEngine { }
 }

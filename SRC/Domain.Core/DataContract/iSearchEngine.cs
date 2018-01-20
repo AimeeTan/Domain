@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Domain.DataContract
+﻿namespace Domain.DataContract
 {
 	public interface iName { string Name { get; } }
 	public interface iUrl { string Url { get; } }
@@ -8,7 +6,9 @@ namespace Domain.DataContract
 	public interface iStartKey { string StartKey { get; } }
 	public interface iEndKey { string EndKey { get; } }
 	public interface iSnap { string Snap { get; } }
-	public interface iSearchEngine: IEntity<int>
+	
+
+	public interface iSearchEngine : IEntity<int>
 		, iName
 		, iUrl
 		, iXqtg

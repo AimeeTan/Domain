@@ -61,7 +61,7 @@ namespace Domain.Core.Store
 			return this.CreateMethodCallQuery<SearchEngine_RowResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 		}
 	}
-	
+
 	public partial class SearchEngine_RowResult
 	{
 		
