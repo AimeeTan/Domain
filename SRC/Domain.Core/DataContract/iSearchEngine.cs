@@ -1,4 +1,6 @@
-﻿namespace Domain.DataContract
+﻿using System;
+
+namespace Domain.DataContract
 {
 	public interface iName { string Name { get; } }
 	public interface iUrl { string Url { get; } }

@@ -11,10 +11,15 @@
 
 namespace Domain.Core.Store
 {
+	using System.Data.Linq;
 	using System.Data.Linq.Mapping;
-	using System.Linq;
+	using System.Data;
+	using System.Collections.Generic;
 	using System.Reflection;
-
+	using System.Linq;
+	using System.Linq.Expressions;
+	using System.ComponentModel;
+	using System;
 
 	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="Domain_Sys")]
 	public partial class Domain_SysDataContext : System.Data.Linq.DataContext
@@ -50,7 +55,7 @@ namespace Domain.Core.Store
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="svc.SearchEngine$Row", IsComposable=true)]
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="svc.SearchEngine$Row", IsComposable = true)]
 		public IQueryable<SearchEngine_RowResult> SearchEngine_Row()
 		{
 			return this.CreateMethodCallQuery<SearchEngine_RowResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
