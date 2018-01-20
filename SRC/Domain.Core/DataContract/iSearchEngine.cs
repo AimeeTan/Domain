@@ -1,4 +1,4 @@
-﻿namespace Domain.DataContract
+﻿namespace Domain.Core
 {
 	public interface iName { string Name { get; } }
 	public interface iUrl { string Url { get; } }

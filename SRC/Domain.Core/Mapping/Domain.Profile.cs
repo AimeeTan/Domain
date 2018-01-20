@@ -1,9 +1,13 @@
 ﻿using AutoMapper;
 
-namespace Domain.Mapping
+namespace Domain.Core
 {
 	public class DomainProfile : Profile
 	{
-
+		public DomainProfile()
+		{
+			CreateMap<iSearchEngine, SearchEngine>()
+					;
+		}
 	}
 }

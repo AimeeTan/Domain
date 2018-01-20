@@ -63,6 +63,9 @@
     </Compile>
     <Compile Include="ServiceConfiguration.cs" />
     <Compile Include="ServiceMapper.cs" />
+    <Compile Include="Store\Domain_Sys.cs">
+      <DependentUpon>Domain_Sys.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Store\Domain_Sys.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -92,6 +95,9 @@
     <Folder Include="Repos\" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\Domain.Core\Domain.Core.csproj">
       <Project>{7e982e45-3de5-4433-b432-13bea7093732}</Project>
       <Name>Domain.Core</Name>
@@ -100,9 +106,6 @@
       <Project>{345acd00-971b-4c93-891b-33ba84d9806f}</Project>
       <Name>Domain</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
