@@ -11,17 +11,11 @@
 
 namespace Domain.Core.Store
 {
-	using System.Data.Linq;
 	using System.Data.Linq.Mapping;
-	using System.Data;
-	using System.Collections.Generic;
-	using System.Reflection;
 	using System.Linq;
-	using System.Linq.Expressions;
-	using System.ComponentModel;
-	using System;
-	
-	
+	using System.Reflection;
+
+
 	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="Domain_Sys")]
 	public partial class Domain_SysDataContext : System.Data.Linq.DataContext
 	{

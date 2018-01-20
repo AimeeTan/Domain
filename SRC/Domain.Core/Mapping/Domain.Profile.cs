@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Domain.DataContract;
 
 namespace Domain.Core
 {

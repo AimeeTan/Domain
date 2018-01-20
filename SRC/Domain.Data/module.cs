@@ -1,4 +1,4 @@
-﻿using Domain.Core;
+﻿using Domain.DataContract;
 
 namespace Domain.Data.Store
 {

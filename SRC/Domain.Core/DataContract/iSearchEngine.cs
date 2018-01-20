@@ -1,4 +1,4 @@
-﻿namespace Domain.Core
+﻿namespace Domain.DataContract
 {
 	public interface iName { string Name { get; } }
 	public interface iUrl { string Url { get; } }
@@ -6,7 +6,7 @@
 	public interface iStartKey { string StartKey { get; } }
 	public interface iEndKey { string EndKey { get; } }
 	public interface iSnap { string Snap { get; } }
-	public interface iSearchEngine: IEntity
+	public interface iSearchEngine: IEntity<int>
 		, iName
 		, iUrl
 		, iXqtg
