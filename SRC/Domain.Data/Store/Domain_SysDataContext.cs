@@ -1,13 +1,12 @@
-﻿using System;
-
-namespace Domain.Data.Store
+﻿namespace Domain.Core.Store
 {
 	partial class Domain_SysDataContext
 	{
-		//public Domain_SysDataContext() :
-		//	base(Core.Properties.Settings.Default.Domain_SysDatabaseConnectionString)
-		//{
-		//	OnCreated();
-		//}
+
+		public Domain_SysDataContext() :
+				base(global::Domain.Core.Properties.Settings.Default.Domain_SysConnectionString, mappingSource)
+		{
+			OnCreated();
+		}
 	}
 }

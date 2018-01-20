@@ -20,10 +20,10 @@ namespace Domain.Core.Store
 	using System.Linq.Expressions;
 	using System.ComponentModel;
 	using System;
-
-
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name = "Domain_Sys")]
-		public partial class Domain_SysDataContext : System.Data.Linq.DataContext
+	
+	
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="Domain_Sys")]
+	public partial class Domain_SysDataContext : System.Data.Linq.DataContext
 	{
 		
 		private static System.Data.Linq.Mapping.MappingSource mappingSource = new AttributeMappingSource();
@@ -54,6 +54,146 @@ namespace Domain.Core.Store
 				base(connection, mappingSource)
 		{
 			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="svc.SearchEngine$Row", IsComposable=true)]
+		public IQueryable<SearchEngine_RowResult> SearchEngine_Row()
+		{
+			return this.CreateMethodCallQuery<SearchEngine_RowResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+		}
+	}
+	
+	public partial class SearchEngine_RowResult
+	{
+		
+		private int _ID;
+		
+		private string _Name;
+		
+		private string _Url;
+		
+		private int _Xqtg;
+		
+		private string _StartKey;
+		
+		private string _EndKey;
+		
+		private string _Snap;
+		
+		public SearchEngine_RowResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL")]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this._ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this._Name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Url", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string Url
+		{
+			get
+			{
+				return this._Url;
+			}
+			set
+			{
+				if ((this._Url != value))
+				{
+					this._Url = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Xqtg", DbType="Int NOT NULL")]
+		public int Xqtg
+		{
+			get
+			{
+				return this._Xqtg;
+			}
+			set
+			{
+				if ((this._Xqtg != value))
+				{
+					this._Xqtg = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StartKey", DbType="VarChar(100)")]
+		public string StartKey
+		{
+			get
+			{
+				return this._StartKey;
+			}
+			set
+			{
+				if ((this._StartKey != value))
+				{
+					this._StartKey = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EndKey", DbType="VarChar(100)")]
+		public string EndKey
+		{
+			get
+			{
+				return this._EndKey;
+			}
+			set
+			{
+				if ((this._EndKey != value))
+				{
+					this._EndKey = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Snap", DbType="VarChar(200)")]
+		public string Snap
+		{
+			get
+			{
+				return this._Snap;
+			}
+			set
+			{
+				if ((this._Snap != value))
+				{
+					this._Snap = value;
+				}
+			}
 		}
 	}
 }

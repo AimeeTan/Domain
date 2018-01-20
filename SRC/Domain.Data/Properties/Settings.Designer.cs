@@ -26,11 +26,10 @@ namespace Domain.Core.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=123-PC\\SQL2012;Initial Catalog=Domain_Sys;Persist Security Info=True;" +
-            "User ID=sa;Password=sasa")]
-        public string Domain_SysDatabaseConnectionString {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=123-PC\\SQL2012;Initial Catalog=Domain_Sys;User ID=sa;Password=sasa")]
+        public string Domain_SysConnectionString {
             get {
-                return ((string)(this["Domain_SysDatabaseConnectionString"]));
+                return ((string)(this["Domain_SysConnectionString"]));
             }
         }
     }
