@@ -8,8 +8,9 @@
 	public interface iSnap { string Snap { get; } }
 	
 
-	public interface iSearchEngine : IEntity<int>
-		, iName
+	public interface iSearchEngine : 
+		IEntity<int>,
+		iName
 		, iUrl
 		, iXqtg
 		, iStartKey

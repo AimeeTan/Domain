@@ -48,13 +48,13 @@
       <HintPath>..\..\packages\Zebra.1.0.0.3\lib\Zebra.dll</HintPath>
     </Reference>
     <Reference Include="Zebra.Core, Version=1.0.0.2, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Zebra.1.0.0.3\lib\Zebra.Core.dll</HintPath>
+      <HintPath>..\..\packages\Zebra.Core.1.0.0.2\lib\net46\Zebra.Core.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataContextFactory.cs" />
     <Compile Include="Map.ext.cs" />
-    <Compile Include="module.cs" />
+    <Compile Include="_module.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -63,9 +63,6 @@
     </Compile>
     <Compile Include="ServiceConfiguration.cs" />
     <Compile Include="ServiceMapper.cs" />
-    <Compile Include="Store\Domain_Sys.cs">
-      <DependentUpon>Domain_Sys.dbml</DependentUpon>
-    </Compile>
     <Compile Include="Store\Domain_Sys.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -75,9 +72,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="packages.config">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
