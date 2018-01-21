@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>f7ebec48-6942-4acd-bb8a-e089d79991f7</ProjectGuid>
+    <ProjectGuid>{F7EBEC48-6942-4ACD-BB8A-E089D79991F7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Domain.Data</RootNamespace>
@@ -30,24 +30,75 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System"/>
-    
-    <Reference Include="System.Core"/>
-    <Reference Include="System.Xml.Linq"/>
-    <Reference Include="System.Data.DataSetExtensions"/>
-    
-    
-    <Reference Include="Microsoft.CSharp"/>
-    
-    <Reference Include="System.Data"/>
-    
-    <Reference Include="System.Net.Http"/>
-    
-    <Reference Include="System.Xml"/>
+    <Reference Include="AutoMapper, Version=6.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AutoMapper.6.1.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Zebra, Version=1.0.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Zebra.1.0.0.2\lib\net46\Zebra.dll</HintPath>
+    </Reference>
+    <Reference Include="Zebra.Core, Version=1.0.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Zebra.Core.1.0.0.2\lib\net46\Zebra.Core.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="DataContextFactory.cs" />
+    <Compile Include="Map.ext.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceConfiguration.cs" />
+    <Compile Include="ServiceMapper.cs" />
+    <Compile Include="Store\Domain_Sys.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Domain_Sys.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Store\Domain_SysDataContext.cs" />
+    <Compile Include="_module.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Store\Domain_Sys.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Domain_Sys.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Store\Domain_Sys.dbml.layout">
+      <DependentUpon>Domain_Sys.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Repos\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Domain.Core\Domain.Core.csproj">
+      <Project>{7E982E45-3DE5-4433-B432-13BEA7093732}</Project>
+      <Name>Domain.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <Project>{345ACD00-971B-4C93-891B-33BA84D9806F}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
- </Project>
+</Project>

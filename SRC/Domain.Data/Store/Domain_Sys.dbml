@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Domain_Sys" Class="Domain_SysDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=123-PC\SQL2012;Initial Catalog=Domain_Sys;Persist Security Info=True;User ID=sa" SettingsObjectName="Domain.Data.Properties.Settings" SettingsPropertyName="Domain_SysConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="svc.SearchEngine$Row" Method="SearchEngine_Row" IsComposable="true">
+    <ElementType Name="SearchEngine_RowResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Url" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Xqtg" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StartKey" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="EndKey" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Snap" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>
