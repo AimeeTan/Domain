@@ -53,7 +53,9 @@
     <Compile Include="Archtypes\NoIDCriteria.cs" />
     <Compile Include="Archtypes\TvpInfo.cs" />
     <Compile Include="Archtypes\TvpRepoBase.cs" />
+    <Compile Include="Facets\ITenancy.cs" />
     <Compile Include="Facets\ITvpRepoContext.cs" />
+    <Compile Include="Tenancy.cs" />
     <Compile Include="_module.cs" />
     <Compile Include="Environment.cs" />
     <Compile Include="Exts\Bag.cs" />

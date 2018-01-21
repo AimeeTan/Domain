@@ -91,7 +91,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Domain.Core\Domain.Core.csproj">
-      <Project>{7E982E45-3DE5-4433-B432-13BEA7093732}</Project>
+      <Project>{7e982e45-3de5-4433-b432-13bea7093732}</Project>
       <Name>Domain.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\Domain\Domain.csproj">

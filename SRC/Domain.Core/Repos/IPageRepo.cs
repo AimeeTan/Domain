@@ -1,9 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using Domain.Archetypes;
+using Domain.Core;
+using System.Collections.Generic;
 
-namespace Domain.Core
+namespace Domain.Repos
 {
-	public interface IPageRepo
+	public interface IPageRepo : ITvpRepo
 	{
-		IList<SearchEngine> SearchEngineList { get; }
+	 	IList<SearchEngine> SearchEngineList();
 	}
 }
