@@ -38,7 +38,7 @@ namespace Domain.WebUI
         public void ConfigureServices(IServiceCollection services)
         {
 			// Add framework services.
-			services.AddLocalization();
+			//services.AddLocalization();
 			services.AddMvc();
 			//services.AddSession(options =>
 			//{

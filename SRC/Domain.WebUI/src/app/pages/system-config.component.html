@@ -6,9 +6,9 @@
 </head>
 <body>
 	<div class="row static-info">
-		<ul class="row col-md-12" *ngIf="searchEngines.length>0">
+		<ul class="row col-md-12" *ngIf="rows.length>0">
 			<li class="form-check col-md-4"
-				*ngFor="let item of searchEngines; let idx=index">
+				*ngFor="let item of rows; let idx=index">
 				<div class="form-check abc-checkbox" (click)="checkConcerns(idx, $event);">
 					<input class="form-check-input" [checked]="item?.checked" type="checkbox" id="{{idx}}" value="{{item.id}}" role="checkbox">
 					<label class="form-check-label" for="idx">{{item.name}}</label>

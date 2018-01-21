@@ -16,18 +16,18 @@ export class SystemConfigComponent extends PaginationComponent {
 		this.criteria = Object.assign({}, Criteria);
 	}
 
-
 	ngAfterViewInit() {
 		this.loadData();
 	}
 	
 	loadData() {
-		//this.pageSvc.httpGet(apiPageUrl.systemConfig, this.criteria, data => {
-		//	this.rows = data.value.data;
-		//	this.criteria.total = data.value.availableCnt;
-		//}, error => {
-		//	this.error = error;
-		//});
+		this.pageSvc.httpGet(apiPageUrl.searchEngine, this.criteria, data => {
+			this.rows = data.value.data;
+			console.log(this.rows);
+			this.criteria.total = data.value.availableCnt;
+		}, error => {
+			this.error = error;
+		});
 	}
 	
 }

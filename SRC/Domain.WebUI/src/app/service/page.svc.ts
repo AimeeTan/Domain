@@ -7,7 +7,7 @@ import { BaseService, CustomBaseService } from './base/base.svc';
 import { ICustomsSpec } from '../model/customs';
 
 export const apiPageUrl = {
-	systemConfig: 'system/config',
+	searchEngine: 'searchEngine/list',
 }
 
 @Injectable()

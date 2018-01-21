@@ -5,7 +5,7 @@ require("rxjs/add/operator/do");
 require("rxjs/add/operator/catch");
 var base_svc_1 = require("./base/base.svc");
 exports.apiPageUrl = {
-    systemConfig: 'system/config',
+    searchEngine: 'searchEngine/list',
 };
 var PageService = (function (_super) {
     __extends(PageService, _super);
