@@ -8,7 +8,6 @@ namespace Domain.Core
 {
 	public class SearchEngine : Entity<SearchEngine>
 	{
-		public int ID { get; set; }
 		public int Xqtg { get; set; }
 		public string Url { get; set; }
 		public string Snap { get; set; }
