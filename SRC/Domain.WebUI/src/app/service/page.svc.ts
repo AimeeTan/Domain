@@ -4,7 +4,6 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/catch';
 import { BaseService, CustomBaseService } from './base/base.svc';
-import { ICustomsSpec } from '../model/customs';
 
 export const apiPageUrl = {
 	searchEngine: 'searchEngine/list',
@@ -12,5 +11,5 @@ export const apiPageUrl = {
 
 @Injectable()
 export class PageService extends CustomBaseService {
-	baseUrl: string = 'api/parcel/exception/';
+	baseUrl: string = 'api/page/';
 }

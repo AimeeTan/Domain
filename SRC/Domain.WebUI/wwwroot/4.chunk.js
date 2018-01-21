@@ -1,6 +1,6 @@
 webpackJsonpac__name_([4],{
 
-/***/ 886:
+/***/ 884:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9,7 +9,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(6);
 __webpack_require__(352);
 __webpack_require__(351);
-var base_svc_1 = __webpack_require__(885);
+var base_svc_1 = __webpack_require__(883);
 exports.apiPageUrl = {
     searchEngine: 'searchEngine/list',
 };
@@ -17,7 +17,7 @@ var PageService = (function (_super) {
     __extends(PageService, _super);
     function PageService() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.baseUrl = 'api/parcel/exception/';
+        _this.baseUrl = 'api/page/';
         return _this;
     }
     return PageService;
@@ -30,7 +30,7 @@ exports.PageService = PageService;
 
 /***/ }),
 
-/***/ 912:
+/***/ 910:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38,13 +38,13 @@ exports.PageService = PageService;
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(6);
 var common_1 = __webpack_require__(54);
-var forms_1 = __webpack_require__(95);
-var router_1 = __webpack_require__(96);
-var ngx_uploader_1 = __webpack_require__(97);
-var ngx_bootstrap_1 = __webpack_require__(829);
-var core_2 = __webpack_require__(137);
-var page_svc_1 = __webpack_require__(886);
-var system_config_component_1 = __webpack_require__(913);
+var forms_1 = __webpack_require__(94);
+var router_1 = __webpack_require__(95);
+var ngx_uploader_1 = __webpack_require__(96);
+var ngx_bootstrap_1 = __webpack_require__(827);
+var core_2 = __webpack_require__(350);
+var page_svc_1 = __webpack_require__(884);
+var system_config_component_1 = __webpack_require__(911);
 exports.routes = [
     { path: '', component: system_config_component_1.SystemConfigComponent, pathMatch: 'full' },
     { path: 'system/config', component: system_config_component_1.SystemConfigComponent, pathMatch: 'full' }
@@ -72,15 +72,15 @@ exports.PagesModule = PagesModule;
 
 /***/ }),
 
-/***/ 913:
+/***/ 911:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(6);
-var criteria_profile_1 = __webpack_require__(914);
-var page_svc_1 = __webpack_require__(886);
+var criteria_profile_1 = __webpack_require__(912);
+var page_svc_1 = __webpack_require__(884);
 var SystemConfigComponent = (function (_super) {
     __extends(SystemConfigComponent, _super);
     function SystemConfigComponent(pageSvc) {
@@ -106,7 +106,7 @@ var SystemConfigComponent = (function (_super) {
 }(criteria_profile_1.PaginationComponent));
 SystemConfigComponent = __decorate([
     core_1.Component({
-        template: __webpack_require__(915)
+        template: __webpack_require__(913)
     }),
     __metadata("design:paramtypes", [page_svc_1.PageService])
 ], SystemConfigComponent);
@@ -115,7 +115,7 @@ exports.SystemConfigComponent = SystemConfigComponent;
 
 /***/ }),
 
-/***/ 914:
+/***/ 912:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -261,7 +261,7 @@ exports.PaginationComponent = PaginationComponent;
 
 /***/ }),
 
-/***/ 915:
+/***/ 913:
 /***/ (function(module, exports) {
 
 module.exports = "<!DOCTYPE html>\r\n<html>\r\n<head>\r\n\t<meta charset=\"utf-8\" />\r\n\t<title></title>\r\n</head>\r\n<body>\r\n\t<div class=\"row static-info\">\r\n\t\t<ul class=\"row col-md-12\" *ngIf=\"rows.length>0\">\r\n\t\t\t<li class=\"form-check col-md-4\"\r\n\t\t\t\t*ngFor=\"let item of rows; let idx=index\">\r\n\t\t\t\t<div class=\"form-check abc-checkbox\" (click)=\"checkConcerns(idx, $event);\">\r\n\t\t\t\t\t<input class=\"form-check-input\" [checked]=\"item?.checked\" type=\"checkbox\" id=\"{{idx}}\" value=\"{{item.id}}\" role=\"checkbox\">\r\n\t\t\t\t\t<label class=\"form-check-label\" for=\"idx\">{{item.name}}</label>\r\n\t\t\t\t</div>\r\n\t\t\t</li>\r\n\t\t</ul>\r\n\t</div>\r\n\r\n\r\n</body>\r\n</html> "

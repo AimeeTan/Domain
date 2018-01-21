@@ -35,9 +35,9 @@ type StoreType = {
 	disposeOldHosts: () => void;
 };
 
-export function createTranslateLoader(http: Http) {
-	return new TranslateHttpLoader(http, './assets/i18n/', '.json');
-}
+//export function createTranslateLoader(http: Http) {
+//	return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+//}
 /**
  * `AppModule` is the main entry point into Angular2's bootstraping process
  */
@@ -54,13 +54,7 @@ export function createTranslateLoader(http: Http) {
 		HttpModule,
 		NgUploaderModule,
 		RouterModule.forRoot(ROUTES, { useHash: true }),
-		TranslateModule.forRoot({
-			loader: {
-				provide: TranslateLoader,
-				useFactory: (createTranslateLoader),
-				deps: [Http]
-			}
-		}),
+		TranslateModule.forRoot(),
 		DateTimePickerModule
 	],
 	providers: [ // expose our Services and Providers into Angular's dependency injection

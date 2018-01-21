@@ -8,7 +8,6 @@ var http_1 = require("@angular/http");
 var router_1 = require("@angular/router");
 var hmr_1 = require("@angularclass/hmr");
 var core_2 = require("@ngx-translate/core");
-var http_loader_1 = require("@ngx-translate/http-loader");
 var ng2_date_time_picker_1 = require("ng2-date-time-picker");
 var ngx_uploader_1 = require("ngx-uploader");
 /*
@@ -27,10 +26,9 @@ var APP_PROVIDERS = app_resolver_1.APP_RESOLVER_PROVIDERS.concat([
     app_service_1.AppState,
     app_config_1.AppConfig
 ]);
-function createTranslateLoader(http) {
-    return new http_loader_1.TranslateHttpLoader(http, './assets/i18n/', '.json');
-}
-exports.createTranslateLoader = createTranslateLoader;
+//export function createTranslateLoader(http: Http) {
+//	return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+//}
 /**
  * `AppModule` is the main entry point into Angular2's bootstraping process
  */
@@ -87,13 +85,7 @@ AppModule = __decorate([
             http_1.HttpModule,
             ngx_uploader_1.NgUploaderModule,
             router_1.RouterModule.forRoot(app_routes_1.ROUTES, { useHash: true }),
-            core_2.TranslateModule.forRoot({
-                loader: {
-                    provide: core_2.TranslateLoader,
-                    useFactory: (createTranslateLoader),
-                    deps: [http_1.Http]
-                }
-            }),
+            core_2.TranslateModule.forRoot(),
             ng2_date_time_picker_1.DateTimePickerModule
         ],
         providers: [

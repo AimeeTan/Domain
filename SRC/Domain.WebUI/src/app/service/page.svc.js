@@ -11,7 +11,7 @@ var PageService = (function (_super) {
     __extends(PageService, _super);
     function PageService() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.baseUrl = 'api/parcel/exception/';
+        _this.baseUrl = 'api/page/';
         return _this;
     }
     return PageService;
