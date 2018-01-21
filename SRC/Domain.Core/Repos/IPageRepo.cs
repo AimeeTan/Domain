@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Domain.Core
 {
-	public class IPageRepo
+	public interface IPageRepo
 	{
-
+		IList<SearchEngine> SearchEngineList { get; }
 	}
 }
