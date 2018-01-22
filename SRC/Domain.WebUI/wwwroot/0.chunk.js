@@ -11,7 +11,7 @@ var core_1 = __webpack_require__(6);
 var common_1 = __webpack_require__(54);
 var forms_1 = __webpack_require__(94);
 var ngx_bootstrap_1 = __webpack_require__(827);
-var core_2 = __webpack_require__(350);
+var core_2 = __webpack_require__(352);
 var layout_routes_1 = __webpack_require__(907);
 var layout_component_1 = __webpack_require__(881);
 var sidebar_component_1 = __webpack_require__(914);
@@ -7730,7 +7730,7 @@ var router_1 = __webpack_require__(95);
 var app_config_1 = __webpack_require__(349);
 var auth_svc_1 = __webpack_require__(882);
 var animations_1 = __webpack_require__(908);
-var core_2 = __webpack_require__(350);
+var core_2 = __webpack_require__(352);
 var Layout = (function () {
     function Layout(config, el, router, renderer, ngZone, translate, authService) {
         var _this = this;
@@ -7992,8 +7992,8 @@ exports.Layout = Layout;
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(6);
 var http_1 = __webpack_require__(137);
-__webpack_require__(352);
 __webpack_require__(351);
+__webpack_require__(350);
 var base_svc_1 = __webpack_require__(883);
 exports.environment = {
     production: false
@@ -8031,8 +8031,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(6);
 var http_1 = __webpack_require__(137);
 var Observable_1 = __webpack_require__(0);
-__webpack_require__(352);
 __webpack_require__(351);
+__webpack_require__(350);
 var BaseService = (function () {
     function BaseService() {
         this.header = new http_1.Headers({ "ajax": "" });

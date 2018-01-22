@@ -7,11 +7,11 @@ webpackJsonpac__name_([4],{
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(6);
-__webpack_require__(352);
 __webpack_require__(351);
+__webpack_require__(350);
 var base_svc_1 = __webpack_require__(883);
 exports.apiPageUrl = {
-    searchEngine: 'searchEngine/list',
+    searchEngine: 'searchEngine/list'
 };
 var PageService = (function (_super) {
     __extends(PageService, _super);
@@ -42,7 +42,6 @@ var forms_1 = __webpack_require__(94);
 var router_1 = __webpack_require__(95);
 var ngx_uploader_1 = __webpack_require__(96);
 var ngx_bootstrap_1 = __webpack_require__(827);
-var core_2 = __webpack_require__(350);
 var page_svc_1 = __webpack_require__(884);
 var system_config_component_1 = __webpack_require__(911);
 exports.routes = [
@@ -57,7 +56,7 @@ var PagesModule = (function () {
 PagesModule.routes = exports.routes;
 PagesModule = __decorate([
     core_1.NgModule({
-        imports: [forms_1.FormsModule, forms_1.ReactiveFormsModule, common_1.CommonModule, router_1.RouterModule.forChild(exports.routes), core_2.TranslateModule, ngx_uploader_1.NgUploaderModule,
+        imports: [forms_1.FormsModule, forms_1.ReactiveFormsModule, common_1.CommonModule, router_1.RouterModule.forChild(exports.routes), ngx_uploader_1.NgUploaderModule, ngx_bootstrap_1.Ng2BootstrapModule, ngx_bootstrap_1.TabsModule.forRoot(), ngx_bootstrap_1.AlertModule.forRoot(),
             ngx_bootstrap_1.PaginationModule.forRoot(), ngx_bootstrap_1.ModalModule.forRoot()],
         declarations: [
             system_config_component_1.SystemConfigComponent
@@ -94,10 +93,9 @@ var SystemConfigComponent = (function (_super) {
     };
     SystemConfigComponent.prototype.loadData = function () {
         var _this = this;
-        this.pageSvc.httpGet(page_svc_1.apiPageUrl.searchEngine, this.criteria, function (data) {
-            _this.rows = data.value.data;
-            console.log(_this.rows);
-            _this.criteria.total = data.value.availableCnt;
+        this.pageSvc.httpGet(page_svc_1.apiPageUrl.searchEngine, this.criteria, function (d) {
+            _this.rows = d.value.data;
+            _this.criteria.total = d.value.availableCnt;
         }, function (error) {
             _this.error = error;
         });
@@ -264,7 +262,7 @@ exports.PaginationComponent = PaginationComponent;
 /***/ 913:
 /***/ (function(module, exports) {
 
-module.exports = "<!DOCTYPE html>\r\n<html>\r\n<head>\r\n\t<meta charset=\"utf-8\" />\r\n\t<title></title>\r\n</head>\r\n<body>\r\n\t<div class=\"row static-info\">\r\n\t\t<ul class=\"row col-md-12\" *ngIf=\"rows.length>0\">\r\n\t\t\t<li class=\"form-check col-md-4\"\r\n\t\t\t\t*ngFor=\"let item of rows; let idx=index\">\r\n\t\t\t\t<div class=\"form-check abc-checkbox\" (click)=\"checkConcerns(idx, $event);\">\r\n\t\t\t\t\t<input class=\"form-check-input\" [checked]=\"item?.checked\" type=\"checkbox\" id=\"{{idx}}\" value=\"{{item.id}}\" role=\"checkbox\">\r\n\t\t\t\t\t<label class=\"form-check-label\" for=\"idx\">{{item.name}}</label>\r\n\t\t\t\t</div>\r\n\t\t\t</li>\r\n\t\t</ul>\r\n\t</div>\r\n\r\n\r\n</body>\r\n</html> "
+module.exports = "<!DOCTYPE html>\r\n<html>\r\n<head>\r\n\t<meta charset=\"utf-8\" />\r\n\t<title></title>\r\n</head>\r\n<body>\r\n\t<div class=\"row static-info\" *ngIf=\"rows.length>0\">\r\n\t\t<ul class=\"row col-md-12\" *ngFor=\"let item of rows; let idx=index\">\r\n\t\t\t<li class=\"form-check col-md-4\">\r\n\t\t\t\t<div class=\"form-check abc-checkbox\" (click)=\"checkSearchEngine(idx, $event);\">\r\n\t\t\t\t\t<input class=\"form-check-input\" [checked]=\"item?.checked\" type=\"checkbox\" id=\"{{idx}}\" value=\"{{item.id}}\" role=\"checkbox\">\r\n\t\t\t\t\t<label class=\"form-check-label\" for=\"idx\">{{item.name}}</label>\r\n\t\t\t\t</div>\r\n\t\t\t</li>\r\n\t\t</ul>\r\n\t</div>\r\n\r\n\r\n</body>\r\n</html> "
 
 /***/ })
 

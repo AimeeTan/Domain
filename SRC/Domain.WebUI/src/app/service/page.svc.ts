@@ -6,7 +6,7 @@ import 'rxjs/add/operator/catch';
 import { BaseService, CustomBaseService } from './base/base.svc';
 
 export const apiPageUrl = {
-	searchEngine: 'searchEngine/list',
+	searchEngine: 'searchEngine/list'
 }
 
 @Injectable()

@@ -6,7 +6,6 @@ var forms_1 = require("@angular/forms");
 var router_1 = require("@angular/router");
 var ngx_uploader_1 = require("ngx-uploader");
 var ngx_bootstrap_1 = require("ngx-bootstrap");
-var core_2 = require("@ngx-translate/core");
 var page_svc_1 = require("../service/page.svc");
 var system_config_component_1 = require("./system-config.component");
 exports.routes = [
@@ -21,7 +20,7 @@ var PagesModule = (function () {
 PagesModule.routes = exports.routes;
 PagesModule = __decorate([
     core_1.NgModule({
-        imports: [forms_1.FormsModule, forms_1.ReactiveFormsModule, common_1.CommonModule, router_1.RouterModule.forChild(exports.routes), core_2.TranslateModule, ngx_uploader_1.NgUploaderModule,
+        imports: [forms_1.FormsModule, forms_1.ReactiveFormsModule, common_1.CommonModule, router_1.RouterModule.forChild(exports.routes), ngx_uploader_1.NgUploaderModule, ngx_bootstrap_1.Ng2BootstrapModule, ngx_bootstrap_1.TabsModule.forRoot(), ngx_bootstrap_1.AlertModule.forRoot(),
             ngx_bootstrap_1.PaginationModule.forRoot(), ngx_bootstrap_1.ModalModule.forRoot()],
         declarations: [
             system_config_component_1.SystemConfigComponent

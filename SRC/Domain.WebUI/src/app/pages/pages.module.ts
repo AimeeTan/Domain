@@ -4,9 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { NgUploaderModule } from 'ngx-uploader';
-
-import { ModalModule, PaginationModule } from 'ngx-bootstrap';
-import { TranslateModule } from '@ngx-translate/core';
+import { ModalModule, Ng2BootstrapModule, PaginationModule, TabsModule, AlertModule } from 'ngx-bootstrap';
 
 import { PageService } from '../service/page.svc';
 import { SystemConfigComponent } from './system-config.component';
@@ -18,7 +16,7 @@ export const routes = [
 ];
 
 @NgModule({
-	imports: [FormsModule, ReactiveFormsModule, CommonModule, RouterModule.forChild(routes), TranslateModule, NgUploaderModule,
+	imports: [FormsModule, ReactiveFormsModule, CommonModule, RouterModule.forChild(routes), NgUploaderModule, Ng2BootstrapModule,TabsModule.forRoot(),AlertModule.forRoot(),
 		PaginationModule.forRoot(), ModalModule.forRoot()],
 	declarations: [
 		SystemConfigComponent

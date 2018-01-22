@@ -31,11 +31,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="src\app\pages\system-config.component.js" />
-    <None Include="src\app\pages\system-config.component.js.map" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Domain.Core\Domain.Core.csproj" />
     <ProjectReference Include="..\Domain.Data\Domain.Data.csproj" />
     <ProjectReference Include="..\Domain\Domain.csproj" />

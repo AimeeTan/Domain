@@ -16,10 +16,9 @@ var SystemConfigComponent = (function (_super) {
     };
     SystemConfigComponent.prototype.loadData = function () {
         var _this = this;
-        this.pageSvc.httpGet(page_svc_1.apiPageUrl.searchEngine, this.criteria, function (data) {
-            _this.rows = data.value.data;
-            console.log(_this.rows);
-            _this.criteria.total = data.value.availableCnt;
+        this.pageSvc.httpGet(page_svc_1.apiPageUrl.searchEngine, this.criteria, function (d) {
+            _this.rows = d.value.data;
+            _this.criteria.total = d.value.availableCnt;
         }, function (error) {
             _this.error = error;
         });

@@ -1,5 +1,5 @@
-﻿import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
-import { ModalDirective, AlertComponent, TabsetComponent } from 'ngx-bootstrap';
+﻿import { Component, OnInit, ViewChild } from '@angular/core';
+import { ModalDirective, AlertComponent } from 'ngx-bootstrap';
 import { Criteria, PaginationComponent } from '../shared/criteria.profile';
 import { PageService, apiPageUrl } from '../service/page.svc';
 
@@ -21,10 +21,9 @@ export class SystemConfigComponent extends PaginationComponent {
 	}
 	
 	loadData() {
-		this.pageSvc.httpGet(apiPageUrl.searchEngine, this.criteria, data => {
-			this.rows = data.value.data;
-			console.log(this.rows);
-			this.criteria.total = data.value.availableCnt;
+		this.pageSvc.httpGet(apiPageUrl.searchEngine, this.criteria, d => {
+			this.rows = d.value.data;
+			this.criteria.total = d.value.availableCnt;
 		}, error => {
 			this.error = error;
 		});
