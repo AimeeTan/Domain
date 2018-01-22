@@ -3,13 +3,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Domain.Api
 {
-	[Route("api/[controller]")]
-	public class PageController : BaseController
+	[Route("api/pages")]
+	public class PageController : Controller
 	{
 		private readonly IPageRepo _pageRepo;
-		public PageController(ITenancyProvider tenancyProvider
-		  , IPageRepo pageRepo) :
-		  base(tenancyProvider)
+		public PageController(IPageRepo pageRepo)
 		{
 			_pageRepo = pageRepo;
 		}

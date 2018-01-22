@@ -15,14 +15,14 @@ var SystemConfigComponent = (function (_super) {
         this.loadData();
     };
     SystemConfigComponent.prototype.loadData = function () {
-        console.log("ss");
-        //this.pageSvc.getSearchEngine().subscribe(data => {
-        //	this.rows = data.value.data;
-        //	this.criteria.total = data.value.availableCnt;
-        //	console.log(this.rows);
-        //}, (error) => {
-        //	this.error = error;
-        //});
+        var _this = this;
+        this.pageSvc.getSearchEngine().subscribe(function (data) {
+            _this.rows = data.value.data;
+            _this.criteria.total = data.value.availableCnt;
+            console.log(_this.rows);
+        }, function (error) {
+            _this.error = error;
+        });
     };
     return SystemConfigComponent;
 }(criteria_profile_1.PaginationComponent));

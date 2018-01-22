@@ -1,10 +1,12 @@
 ﻿using AutoMapper;
+using Domain.Core;
+using Domain.Data;
+using Domain.Repos;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using System;
 
 namespace Domain.WebUI
 {
@@ -28,7 +30,7 @@ namespace Domain.WebUI
 			Env.InitWebDirectory(env.ContentRootPath);
 			Mapper.Initialize(cfg =>
 			{
-				//cfg.AddProfile<TenancyProfile>();
+				cfg.AddProfile<DomainProfile>();
 			});
 		}
 
@@ -40,6 +42,7 @@ namespace Domain.WebUI
 			// Add framework services.
 			//services.AddLocalization();
 			services.AddMvc();
+			services.AddScoped<IPageRepo, PageRepo>();
 			//services.AddSession(options =>
 			//{
 			//	options.IdleTimeout = TimeSpan.FromHours(6);
