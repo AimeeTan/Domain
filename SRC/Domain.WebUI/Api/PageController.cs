@@ -1,6 +1,8 @@
-﻿using Domain.Repos;
+﻿using Domain.Core;
+using Domain.Repos;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Collections.Generic;
 
 namespace Domain.Api
 {
@@ -28,5 +30,10 @@ namespace Domain.Api
 		[HttpGet("searchEngine/list")]
 		public IActionResult SearchEngineList()
 			=> TryCatch(() => _pageRepo.SearchEngineList());
+
+		
+        [HttpPost("confirm/config")]
+        public IActionResult ConfirmConfig([FromBody]SearchEngineSpec spec)
+            => TryCatch(() => _pageRepo.ConfirmConfig(spec));
 	}
 }

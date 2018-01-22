@@ -13,6 +13,11 @@ var PageService = (function (_super) {
         _this.url = 'api/pages/';
         return _this;
     }
+    PageService.prototype.confirmConfig = function (spec) {
+        return this.http.post(this.url + 'confirm/config', spec, { headers: this.header })
+            .map(function (response) { return response; })
+            .catch(this.handleError);
+    };
     PageService.prototype.getSearchEngine = function () {
         return this.http.get(this.url + 'searchEngine/list')
             .map(function (response) { return response.json(); })

@@ -14,6 +14,12 @@ export class PageService extends BaseService {
 		super();
 	}
 
+	confirmConfig(spec: any): Observable<any> {
+		return this.http.post(this.url + 'confirm/config', spec , { headers: this.header })
+			.map((response: Response) => response)
+			.catch(this.handleError);
+	}
+
 	getSearchEngine(): Observable<any> {
 		return this.http.get(this.url + 'searchEngine/list')
 			.map((response: Response) => response.json())

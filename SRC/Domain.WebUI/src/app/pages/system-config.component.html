@@ -4,7 +4,7 @@
 	<div class="widget-body">
 		<div class="static-info" *ngIf="rows.length>0">
 			<div class="pull-right row">
-				<button class="btn btn-info mr-2" (click)="confirm()" role="button"> 确认配置 </button>
+				<button class="btn btn-info mr-2" (click)="confirmConfig()" role="button"> 确认配置 </button>
 			</div>
 			<ul class="row col-md-12 list-unstyled" *ngFor="let item of rows; let idx=index">
 				<li class="form-check col-md-4">

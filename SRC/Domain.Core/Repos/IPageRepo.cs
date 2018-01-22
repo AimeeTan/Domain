@@ -7,5 +7,6 @@ namespace Domain.Repos
 	public interface IPageRepo : ITvpRepo
 	{
 	 	IList<SearchEngine> SearchEngineList();
+		void ConfirmConfig(SearchEngineSpec spec);
 	}
 }
