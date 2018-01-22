@@ -15,24 +15,24 @@ export abstract class PaginationComponent {
 		return this.rows.filter(x => x.checked).length > 0 ? true : false;
 	}
 
-	onChangePage(page: any) {
-		this.checked = false;
-		this.criteria.pageIndex = page.page;
-		this.criteria.pageSize = page.itemsPerPage;
-		this.loadData();
-	}
+	//onChangePage(page: any) {
+	//	this.checked = false;
+	//	this.criteria.pageIndex = page.page;
+	//	this.criteria.pageSize = page.itemsPerPage;
+	//	this.loadData();
+	//}
 
-	onChangePageSize() {
-		this.checked = false;
-		this.criteria.pageIndex = 1;
-		this.loadData();
-	}
+	//onChangePageSize() {
+	//	this.checked = false;
+	//	this.criteria.pageIndex = 1;
+	//	this.loadData();
+	//}
 
-	onSelectRange(date: string[]) {
-		if (date.length !== 2) return;
-		[this.criteria.startDate, this.criteria.endDate] = date;
-		this.loadData();
-	}
+	//onSelectRange(date: string[]) {
+	//	if (date.length !== 2) return;
+	//	[this.criteria.startDate, this.criteria.endDate] = date;
+	//	this.loadData();
+	//}
 
 	toggleCheck() {
 		this.checked = !this.checked;
@@ -80,41 +80,11 @@ export abstract class PaginationComponent {
 			}
 		}
 	}
-
-	changeSource(soucre: any) {
-		this.criteria.source = soucre;
-		this.loadData();
-	}
-
-	changePort(port: any) {
-		this.criteria.poa = port;
-		this.loadData();
-	}
-
-	changeHub(hubID: any) {
-		this.criteria.rcvHubID = hubID;
-		this.loadData();
-	}
-
-	changeRoute(routeID: any) {
-		this.criteria.routeID = routeID;
-		this.loadData();
-	}
-
-	changeBroker(brokerID: any) {
-		this.criteria.brokerID = brokerID;
-		this.loadData();
-	}
-
-	changeMftGroup(mftGroup: any) {
-		this.criteria.mftGroup = mftGroup;
-		this.loadData();
-	}
-
-	changeTenant(id: any) {
-		this.criteria.tenantID = id;
-		this.loadData(); 
-	}
+	
+	//changeTenant(id: any) {
+	//	this.criteria.tenantID = id;
+	//	this.loadData(); 
+	//}
 
 	checkedIds() {
 		const ids: number[] = [];
@@ -125,6 +95,7 @@ export abstract class PaginationComponent {
 			return ids;
 		}
 	}
+
 	allIds() {
 		const ids: number[] = [];
 		this.rows.forEach(x => ids.push(x.id));

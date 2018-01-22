@@ -3,13 +3,34 @@ import { Http, Response, URLSearchParams } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/catch';
-import { BaseService, CustomBaseService } from './base/base.svc';
+import { BaseService } from './base/base.svc';
 
-export const apiPageUrl = {
-	searchEngine: 'searchEngine/list'
-}
 
 @Injectable()
-export class PageService extends CustomBaseService {
-	baseUrl: string = 'api/page/';
+export class PageService extends BaseService {
+	private url = 'api/pages/';
+
+	constructor(private http: Http) {
+		super();
+	}
+
+	getSearchEngine(): Observable<any> {
+		return this.http.get(this.url + 'searchEngine/list')
+			.map((response: Response) => response.json())
+			.catch(this.handleError);
+	}
+
+	//getList(criteria: any): Observable<any> {
+	//	const filter = new URLSearchParams();
+	//	for (let property in criteria) {
+	//		if (criteria.hasOwnProperty(property)) {
+	//			if (!!criteria[property]) {
+	//				filter.set(property, criteria[property].toString());
+	//			}
+	//		}
+	//	}
+	//	return this.http.get(this.url + '/list', { search: filter })
+	//		.map((response: Response) => response.json())
+	//		.catch(this.handleError);
+	//}
 }

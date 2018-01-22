@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Domain.Api
 {
-	[Route("api/page")]
+	[Route("api/[controller]")]
 	public class PageController : BaseController
 	{
 		private readonly IPageRepo _pageRepo;
@@ -16,6 +16,10 @@ namespace Domain.Api
 
 		[HttpGet("searchEngine/list")]
 		public IActionResult SearchEngineList()
-		  => TryCatch(() => _pageRepo.SearchEngineList());
+		{
+			var ss = _pageRepo.SearchEngineList();
+			return Ok(_pageRepo.SearchEngineList());
+		}
+		//=> TryCatch(() => _pageRepo.SearchEngineList());
 	}
 }

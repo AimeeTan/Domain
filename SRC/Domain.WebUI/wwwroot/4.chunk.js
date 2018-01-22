@@ -1,29 +1,34 @@
 webpackJsonpac__name_([4],{
 
-/***/ 884:
+/***/ 883:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(6);
+var http_1 = __webpack_require__(137);
 __webpack_require__(351);
 __webpack_require__(350);
-var base_svc_1 = __webpack_require__(883);
-exports.apiPageUrl = {
-    searchEngine: 'searchEngine/list'
-};
+var base_svc_1 = __webpack_require__(907);
 var PageService = (function (_super) {
     __extends(PageService, _super);
-    function PageService() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.baseUrl = 'api/page/';
+    function PageService(http) {
+        var _this = _super.call(this) || this;
+        _this.http = http;
+        _this.url = 'api/pages/';
         return _this;
     }
+    PageService.prototype.getSearchEngine = function () {
+        return this.http.get(this.url + 'searchEngine/list')
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
     return PageService;
-}(base_svc_1.CustomBaseService));
+}(base_svc_1.BaseService));
 PageService = __decorate([
-    core_1.Injectable()
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [http_1.Http])
 ], PageService);
 exports.PageService = PageService;
 
@@ -42,7 +47,7 @@ var forms_1 = __webpack_require__(94);
 var router_1 = __webpack_require__(95);
 var ngx_uploader_1 = __webpack_require__(96);
 var ngx_bootstrap_1 = __webpack_require__(827);
-var page_svc_1 = __webpack_require__(884);
+var page_svc_1 = __webpack_require__(883);
 var system_config_component_1 = __webpack_require__(911);
 exports.routes = [
     { path: '', component: system_config_component_1.SystemConfigComponent, pathMatch: 'full' },
@@ -79,7 +84,7 @@ exports.PagesModule = PagesModule;
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(6);
 var criteria_profile_1 = __webpack_require__(912);
-var page_svc_1 = __webpack_require__(884);
+var page_svc_1 = __webpack_require__(883);
 var SystemConfigComponent = (function (_super) {
     __extends(SystemConfigComponent, _super);
     function SystemConfigComponent(pageSvc) {
@@ -93,9 +98,10 @@ var SystemConfigComponent = (function (_super) {
     };
     SystemConfigComponent.prototype.loadData = function () {
         var _this = this;
-        this.pageSvc.httpGet(page_svc_1.apiPageUrl.searchEngine, this.criteria, function (d) {
-            _this.rows = d.value.data;
-            _this.criteria.total = d.value.availableCnt;
+        this.pageSvc.getSearchEngine().subscribe(function (data) {
+            _this.rows = data.value.data;
+            _this.criteria.total = data.value.availableCnt;
+            console.log(_this.rows);
         }, function (error) {
             _this.error = error;
         });
@@ -134,23 +140,22 @@ var PaginationComponent = (function () {
     PaginationComponent.prototype.isChecked = function () {
         return this.rows.filter(function (x) { return x.checked; }).length > 0 ? true : false;
     };
-    PaginationComponent.prototype.onChangePage = function (page) {
-        this.checked = false;
-        this.criteria.pageIndex = page.page;
-        this.criteria.pageSize = page.itemsPerPage;
-        this.loadData();
-    };
-    PaginationComponent.prototype.onChangePageSize = function () {
-        this.checked = false;
-        this.criteria.pageIndex = 1;
-        this.loadData();
-    };
-    PaginationComponent.prototype.onSelectRange = function (date) {
-        if (date.length !== 2)
-            return;
-        this.criteria.startDate = date[0], this.criteria.endDate = date[1];
-        this.loadData();
-    };
+    //onChangePage(page: any) {
+    //	this.checked = false;
+    //	this.criteria.pageIndex = page.page;
+    //	this.criteria.pageSize = page.itemsPerPage;
+    //	this.loadData();
+    //}
+    //onChangePageSize() {
+    //	this.checked = false;
+    //	this.criteria.pageIndex = 1;
+    //	this.loadData();
+    //}
+    //onSelectRange(date: string[]) {
+    //	if (date.length !== 2) return;
+    //	[this.criteria.startDate, this.criteria.endDate] = date;
+    //	this.loadData();
+    //}
     PaginationComponent.prototype.toggleCheck = function () {
         var _this = this;
         this.checked = !this.checked;
@@ -197,34 +202,10 @@ var PaginationComponent = (function () {
             }
         }
     };
-    PaginationComponent.prototype.changeSource = function (soucre) {
-        this.criteria.source = soucre;
-        this.loadData();
-    };
-    PaginationComponent.prototype.changePort = function (port) {
-        this.criteria.poa = port;
-        this.loadData();
-    };
-    PaginationComponent.prototype.changeHub = function (hubID) {
-        this.criteria.rcvHubID = hubID;
-        this.loadData();
-    };
-    PaginationComponent.prototype.changeRoute = function (routeID) {
-        this.criteria.routeID = routeID;
-        this.loadData();
-    };
-    PaginationComponent.prototype.changeBroker = function (brokerID) {
-        this.criteria.brokerID = brokerID;
-        this.loadData();
-    };
-    PaginationComponent.prototype.changeMftGroup = function (mftGroup) {
-        this.criteria.mftGroup = mftGroup;
-        this.loadData();
-    };
-    PaginationComponent.prototype.changeTenant = function (id) {
-        this.criteria.tenantID = id;
-        this.loadData();
-    };
+    //changeTenant(id: any) {
+    //	this.criteria.tenantID = id;
+    //	this.loadData(); 
+    //}
     PaginationComponent.prototype.checkedIds = function () {
         var ids = [];
         this.rows.filter(function (x) { return x.checked; }).forEach(function (x) { return ids.push(x.id); });

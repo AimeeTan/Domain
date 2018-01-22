@@ -15,23 +15,22 @@ var PaginationComponent = (function () {
     PaginationComponent.prototype.isChecked = function () {
         return this.rows.filter(function (x) { return x.checked; }).length > 0 ? true : false;
     };
-    PaginationComponent.prototype.onChangePage = function (page) {
-        this.checked = false;
-        this.criteria.pageIndex = page.page;
-        this.criteria.pageSize = page.itemsPerPage;
-        this.loadData();
-    };
-    PaginationComponent.prototype.onChangePageSize = function () {
-        this.checked = false;
-        this.criteria.pageIndex = 1;
-        this.loadData();
-    };
-    PaginationComponent.prototype.onSelectRange = function (date) {
-        if (date.length !== 2)
-            return;
-        this.criteria.startDate = date[0], this.criteria.endDate = date[1];
-        this.loadData();
-    };
+    //onChangePage(page: any) {
+    //	this.checked = false;
+    //	this.criteria.pageIndex = page.page;
+    //	this.criteria.pageSize = page.itemsPerPage;
+    //	this.loadData();
+    //}
+    //onChangePageSize() {
+    //	this.checked = false;
+    //	this.criteria.pageIndex = 1;
+    //	this.loadData();
+    //}
+    //onSelectRange(date: string[]) {
+    //	if (date.length !== 2) return;
+    //	[this.criteria.startDate, this.criteria.endDate] = date;
+    //	this.loadData();
+    //}
     PaginationComponent.prototype.toggleCheck = function () {
         var _this = this;
         this.checked = !this.checked;
@@ -78,34 +77,10 @@ var PaginationComponent = (function () {
             }
         }
     };
-    PaginationComponent.prototype.changeSource = function (soucre) {
-        this.criteria.source = soucre;
-        this.loadData();
-    };
-    PaginationComponent.prototype.changePort = function (port) {
-        this.criteria.poa = port;
-        this.loadData();
-    };
-    PaginationComponent.prototype.changeHub = function (hubID) {
-        this.criteria.rcvHubID = hubID;
-        this.loadData();
-    };
-    PaginationComponent.prototype.changeRoute = function (routeID) {
-        this.criteria.routeID = routeID;
-        this.loadData();
-    };
-    PaginationComponent.prototype.changeBroker = function (brokerID) {
-        this.criteria.brokerID = brokerID;
-        this.loadData();
-    };
-    PaginationComponent.prototype.changeMftGroup = function (mftGroup) {
-        this.criteria.mftGroup = mftGroup;
-        this.loadData();
-    };
-    PaginationComponent.prototype.changeTenant = function (id) {
-        this.criteria.tenantID = id;
-        this.loadData();
-    };
+    //changeTenant(id: any) {
+    //	this.criteria.tenantID = id;
+    //	this.loadData(); 
+    //}
     PaginationComponent.prototype.checkedIds = function () {
         var ids = [];
         this.rows.filter(function (x) { return x.checked; }).forEach(function (x) { return ids.push(x.id); });
