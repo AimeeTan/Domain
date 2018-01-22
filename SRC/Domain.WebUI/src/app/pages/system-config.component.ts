@@ -9,11 +9,10 @@ import { PageService } from '../service/page.svc';
 
 export class SystemConfigComponent extends PaginationComponent {
 	error: string;
-	searchEngines: any;
 
 	constructor(private readonly pageSvc: PageService) {
 		super();
-		this.criteria = Object.assign({}, Criteria);
+		//this.criteria = Object.assign({}, Criteria);
 	}
 
 	ngAfterViewInit() {
@@ -22,12 +21,16 @@ export class SystemConfigComponent extends PaginationComponent {
 	
 	loadData() {
 		this.pageSvc.getSearchEngine().subscribe(data => {
-			this.rows = data.value.data;
-			this.criteria.total = data.value.availableCnt;
-			console.log(this.rows);
+			this.rows = data;
 		}, (error) => {
 			this.error = error;
 		});
 	}
-	
+
+	checkSearchEngine(idx: number, event: any) {
+		this.rows[idx].checked = !this.rows[idx].checked;
+	}
+	confirm() {
+		console.log(this.rows);
+	}
 }

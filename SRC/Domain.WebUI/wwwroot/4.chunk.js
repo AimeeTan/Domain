@@ -1,6 +1,6 @@
 webpackJsonpac__name_([4],{
 
-/***/ 883:
+/***/ 884:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10,7 +10,7 @@ var core_1 = __webpack_require__(6);
 var http_1 = __webpack_require__(137);
 __webpack_require__(351);
 __webpack_require__(350);
-var base_svc_1 = __webpack_require__(907);
+var base_svc_1 = __webpack_require__(883);
 var PageService = (function (_super) {
     __extends(PageService, _super);
     function PageService(http) {
@@ -47,7 +47,7 @@ var forms_1 = __webpack_require__(94);
 var router_1 = __webpack_require__(95);
 var ngx_uploader_1 = __webpack_require__(96);
 var ngx_bootstrap_1 = __webpack_require__(827);
-var page_svc_1 = __webpack_require__(883);
+var page_svc_1 = __webpack_require__(884);
 var system_config_component_1 = __webpack_require__(911);
 exports.routes = [
     { path: '', component: system_config_component_1.SystemConfigComponent, pathMatch: 'full' },
@@ -84,14 +84,14 @@ exports.PagesModule = PagesModule;
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(6);
 var criteria_profile_1 = __webpack_require__(912);
-var page_svc_1 = __webpack_require__(883);
+var page_svc_1 = __webpack_require__(884);
 var SystemConfigComponent = (function (_super) {
     __extends(SystemConfigComponent, _super);
     function SystemConfigComponent(pageSvc) {
         var _this = _super.call(this) || this;
         _this.pageSvc = pageSvc;
-        _this.criteria = Object.assign({}, criteria_profile_1.Criteria);
         return _this;
+        //this.criteria = Object.assign({}, Criteria);
     }
     SystemConfigComponent.prototype.ngAfterViewInit = function () {
         this.loadData();
@@ -99,12 +99,16 @@ var SystemConfigComponent = (function (_super) {
     SystemConfigComponent.prototype.loadData = function () {
         var _this = this;
         this.pageSvc.getSearchEngine().subscribe(function (data) {
-            _this.rows = data.value.data;
-            _this.criteria.total = data.value.availableCnt;
-            console.log(_this.rows);
+            _this.rows = data;
         }, function (error) {
             _this.error = error;
         });
+    };
+    SystemConfigComponent.prototype.checkSearchEngine = function (idx, event) {
+        this.rows[idx].checked = !this.rows[idx].checked;
+    };
+    SystemConfigComponent.prototype.confirm = function () {
+        console.log(this.rows);
     };
     return SystemConfigComponent;
 }(criteria_profile_1.PaginationComponent));
@@ -243,7 +247,7 @@ exports.PaginationComponent = PaginationComponent;
 /***/ 913:
 /***/ (function(module, exports) {
 
-module.exports = "<!DOCTYPE html>\r\n<html>\r\n<head>\r\n\t<meta charset=\"utf-8\" />\r\n\t<title></title>\r\n</head>\r\n<body>\r\n\t<div class=\"row static-info\" *ngIf=\"rows.length>0\">\r\n\t\t<ul class=\"row col-md-12\" *ngFor=\"let item of rows; let idx=index\">\r\n\t\t\t<li class=\"form-check col-md-4\">\r\n\t\t\t\t<div class=\"form-check abc-checkbox\" (click)=\"checkSearchEngine(idx, $event);\">\r\n\t\t\t\t\t<input class=\"form-check-input\" [checked]=\"item?.checked\" type=\"checkbox\" id=\"{{idx}}\" value=\"{{item.id}}\" role=\"checkbox\">\r\n\t\t\t\t\t<label class=\"form-check-label\" for=\"idx\">{{item.name}}</label>\r\n\t\t\t\t</div>\r\n\t\t\t</li>\r\n\t\t</ul>\r\n\t</div>\r\n\r\n\r\n</body>\r\n</html> "
+module.exports = "<h1 class=\"page-title\">\t系统配置-搜索引擎</h1>\r\n\r\n<div class=\"widget\">\r\n\t<div class=\"widget-body\">\r\n\t\t<div class=\"static-info\" *ngIf=\"rows.length>0\">\r\n\t\t\t<div class=\"pull-right row\">\r\n\t\t\t\t<button class=\"btn btn-info mr-2\" (click)=\"confirm()\" role=\"button\"> 确认配置 </button>\r\n\t\t\t</div>\r\n\t\t\t<ul class=\"row col-md-12 list-unstyled\" *ngFor=\"let item of rows; let idx=index\">\r\n\t\t\t\t<li class=\"form-check col-md-4\">\r\n\t\t\t\t\t<div class=\"form-check abc-checkbox\" (click)=\"checkSearchEngine(idx, $event);\">\r\n\t\t\t\t\t\t<input class=\"form-check-input\" [checked]=\"item?.checked\" type=\"checkbox\" id=\"{{idx}}\" value=\"{{item.id}}\" role=\"checkbox\">\r\n\t\t\t\t\t\t<label class=\"form-check-label\" for=\"idx\"><strong>{{item.name}}</strong></label>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</li>\r\n\t\t\t\t<li class=\"col-md-4\" *ngIf=\"item?.checked\">\r\n\t\t\t\t\t<div class=\"input-group\">\r\n\t\t\t\t\t\t<input class=\"form-check-input\" id=\"table-search-input\" [(ngModel)]=\"item.startKey\" placeholder=\"请输入前关键词\"\r\n\t\t\t\t\t\t\t   type=\"text\">\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</li>\r\n\t\t\t\t<li class=\"col-md-4\" *ngIf=\"item?.checked\">\r\n\t\t\t\t\t<div class=\"input-group\">\r\n\t\t\t\t\t\t<input class=\"form-check-input\" id=\"table-search-input\" [(ngModel)]=\"item.endKey\" placeholder=\"请输入后关键词\"\r\n\t\t\t\t\t\t\t   type=\"text\">\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</li>\r\n\t\t\t</ul>\r\n\t\t\t<!--<div class=\"clearfix\">asdgfasgfasdvfgawsd</div>\r\n\t<br />-->\r\n\t\t\t<br />\r\n\t\t</div>\r\n\t</div>\r\n</div>\r\n"
 
 /***/ })
 

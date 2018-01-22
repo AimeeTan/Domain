@@ -8,8 +8,8 @@ var SystemConfigComponent = (function (_super) {
     function SystemConfigComponent(pageSvc) {
         var _this = _super.call(this) || this;
         _this.pageSvc = pageSvc;
-        _this.criteria = Object.assign({}, criteria_profile_1.Criteria);
         return _this;
+        //this.criteria = Object.assign({}, Criteria);
     }
     SystemConfigComponent.prototype.ngAfterViewInit = function () {
         this.loadData();
@@ -17,12 +17,13 @@ var SystemConfigComponent = (function (_super) {
     SystemConfigComponent.prototype.loadData = function () {
         var _this = this;
         this.pageSvc.getSearchEngine().subscribe(function (data) {
-            _this.rows = data.value.data;
-            _this.criteria.total = data.value.availableCnt;
-            console.log(_this.rows);
+            _this.rows = data;
         }, function (error) {
             _this.error = error;
         });
+    };
+    SystemConfigComponent.prototype.checkSearchEngine = function (idx, event) {
+        this.rows[idx].checked = !this.rows[idx].checked;
     };
     return SystemConfigComponent;
 }(criteria_profile_1.PaginationComponent));
