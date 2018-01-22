@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
+using Domain.Archetypes;
 using Domain.Core;
 using Domain.Data;
+using Domain.Data.Store;
 using Domain.Repos;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -43,6 +45,8 @@ namespace Domain.WebUI
 			//services.AddLocalization();
 			services.AddMvc();
 			services.AddScoped<IPageRepo, PageRepo>();
+			//services.AddTransient<ITenancyProvider, TenancyProvider>();
+			services.AddScoped<IDataContextFactory<Domain_SysDataContext>, DataContextFactory>();
 			//services.AddSession(options =>
 			//{
 			//	options.IdleTimeout = TimeSpan.FromHours(6);

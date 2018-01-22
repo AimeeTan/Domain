@@ -11,12 +11,13 @@ namespace Domain.Api
 	[ResponseCache(NoStore = true, Duration = 0, VaryByHeader = "None")]
 	//[AllowAnonymous]
 	[Authorize]
-	public abstract class BaseController : Controller, ITvpRepoContext
+	public abstract class BaseController : Controller
+		//, ITvpRepoContext
 	{
-		public BaseController(ITenancyProvider tenancyProvider)
-		{
-			Tenancy = tenancyProvider.Get();
-		}
+		//public BaseController(ITenancyProvider tenancyProvider)
+		//{
+		//	Tenancy = tenancyProvider.Get();
+		//}
 		protected IActionResult TryOrBadRequest<R>(Func<R> func)
 			=> TryCatch(func);
 
@@ -32,29 +33,29 @@ namespace Domain.Api
 			catch (Exception ex) { return new BadRequestObjectResult(new { Error = ex.Message }); }
 		}
 
-		public Tenancy Tenancy { get; }
+		//public Tenancy Tenancy { get; }
 
-		public string TenancyTvp => throw new NotImplementedException();
+		//public string TenancyTvp => throw new NotImplementedException();
 
 		//public string TenancyTvp => Tenancy.TvpFor(UserRoles.ICOP);
 
-		protected void setImportDetailFromSession<T>(string key, T detail)
-		{
-			HttpContext.Session.SetString(key, JsonConvert.SerializeObject(detail));
-		}
+		//protected void setImportDetailFromSession<T>(string key, T detail)
+		//{
+		//	HttpContext.Session.SetString(key, JsonConvert.SerializeObject(detail));
+		//}
 
-		protected T getImportDetailFromSession<T>(string key)
-		{
-			try
-			{
-				var jsonData = HttpContext.Session.GetString(key) ?? string.Empty;
-				return JsonConvert.DeserializeObject<T>(jsonData);
-			}
-			catch
-			{
-				return default(T);
-			}
+		//protected T getImportDetailFromSession<T>(string key)
+		//{
+		//	try
+		//	{
+		//		var jsonData = HttpContext.Session.GetString(key) ?? string.Empty;
+		//		return JsonConvert.DeserializeObject<T>(jsonData);
+		//	}
+		//	catch
+		//	{
+		//		return default(T);
+		//	}
 
-		}
+		//}
 	}
 }

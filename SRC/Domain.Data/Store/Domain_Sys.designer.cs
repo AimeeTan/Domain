@@ -23,21 +23,21 @@ namespace Domain.Data.Store
 	
 	
 	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="Domain_Sys")]
-	public partial class Domain_SysDataContext : System.Data.Linq.DataContext
+	public partial class Domain_SysDataContext : System.Data.Linq.DataContext, IDisposable
 	{
 		
 		private static System.Data.Linq.Mapping.MappingSource mappingSource = new AttributeMappingSource();
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    #endregion
-		
-		//public Domain_SysDataContext() : 
+		#endregion
+
+		//public Domain_SysDataContext() :
 		//		base(global::Domain.Data.Properties.Settings.Default.Domain_SysConnectionString, mappingSource)
 		//{
 		//	OnCreated();
 		//}
-		
+
 		public Domain_SysDataContext(string connection) : 
 				base(connection, mappingSource)
 		{

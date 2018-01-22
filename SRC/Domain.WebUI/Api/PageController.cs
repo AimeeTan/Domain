@@ -1,5 +1,6 @@
 ﻿using Domain.Repos;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace Domain.Api
 {
@@ -7,17 +8,18 @@ namespace Domain.Api
 	public class PageController : Controller
 	{
 		private readonly IPageRepo _pageRepo;
-		public PageController(IPageRepo pageRepo)
+		public PageController(IPageRepo pageRepo) 
 		{
 			_pageRepo = pageRepo;
 		}
 
+		protected static IActionResult TryCatch<TR>(Func<TR> func)
+		{
+			try { return new OkObjectResult(func()); }
+			catch (Exception ex) { return new BadRequestObjectResult(new { Error = ex.Message }); }
+		}
 		[HttpGet("searchEngine/list")]
 		public IActionResult SearchEngineList()
-		{
-			var ss = _pageRepo.SearchEngineList();
-			return Ok(_pageRepo.SearchEngineList());
-		}
-		//=> TryCatch(() => _pageRepo.SearchEngineList());
+			=> TryCatch(() => _pageRepo.SearchEngineList());
 	}
 }
