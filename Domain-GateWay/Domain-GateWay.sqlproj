@@ -63,8 +63,13 @@
   <ItemGroup>
     <Build Include="Functions\SearchEngine_Row.sql" />
     <Build Include="Actions\ConfirmConfig.sql" />
+    <None Include="Actions\Copy of Slice_Return.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Domain-GateWay.publish.xml" />
+    <None Include="Functions\String_Slice.sql" />
+    <None Include="Functions\Slice_Return.sql" />
+    <None Include="Actions\Slice_Return.sql" />
+    <None Include="Functions\Website_Row.sql" />
   </ItemGroup>
 </Project>

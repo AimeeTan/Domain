@@ -18,7 +18,6 @@ var SystemConfigComponent = (function (_super) {
         this.pageSvc.getSearchEngine().subscribe(function (data) {
             _this.rows = data;
             _this.rows.forEach(function (x) { return (x.startKey != '' || x.startKey != '') ? x.checked = true : x.checked; });
-            console.log(_this.rows);
         }, function (error) {
             _this.error = error;
         });
